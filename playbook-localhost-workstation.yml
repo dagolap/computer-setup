@@ -1,0 +1,10 @@
+- hosts: localhost
+  vars:
+    user: dagolap
+  roles:
+    - utils-shell
+    - utils-gui
+    - utils-virtualization
+    - utils-docker
+    - dev-python
+    - dev-javascript
