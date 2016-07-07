@@ -70,6 +70,7 @@
     - arc-theme
     - vivacious-colors-gtk-theme
     - vivacious-colors-icon-theme
+    - remmina
   when: ansible_distribution == "Fedora"
 
 - name: Install KeepassHTTP
