@@ -33,6 +33,7 @@
     dest: ~/{{ item }}
     state: link
   with_items:
+    - .emacs.d
     - .gitconfig
     - .profile
     - .vimrc
