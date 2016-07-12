@@ -104,7 +104,8 @@
     - .fonts.conf
   become_user: "{{ user }}"
 
-- stat: path=~/.fonts/FiraCode_1.102/
+- stat: path=~/.fonts/FiraCode_1.102
+  become_user: "{{ user }}"
   register: firacode_files
 
 - name: Download Fira Code archive
