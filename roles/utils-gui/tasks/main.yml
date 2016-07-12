@@ -27,6 +27,16 @@
     gpgcheck: yes
   when: ansible_distribution == "Fedora"
 
+# Required by arc icon theme from Horst2180
+- name: Add moka icon theme repository
+  yum_repository:
+    name: opensuse-snwh-moka
+    description: Repository for Moka Icon theme - owned by snwh
+    baseurl: http://download.opensuse.org/repositories/home:/snwh:/moka/Fedora_23/
+    gpgkey: http://download.opensuse.org/repositories/home:/snwh:/moka/Fedora_23//repodata/repomd.xml.key
+    gpgcheck: yes
+  when: ansible_distribution == "Fedora"
+
 - name: Add arc and vertex themes repository
   yum_repository:
     name: opensuse-horst2180
@@ -61,6 +71,7 @@
     - albert
     - vertex-theme
     - arc-theme
+    - arc-icon-theme
     - vivacious-colors-gtk-theme
     - vivacious-colors-icon-theme
     - remmina
