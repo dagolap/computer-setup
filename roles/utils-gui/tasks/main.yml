@@ -1,3 +1,5 @@
+# TODO: Add Visual Studio Code from repository when microsoft supplies and official one.
+
 - name: Add Dropbox repository (yum)
   yum_repository:
     name: dropbox
@@ -21,16 +23,6 @@
     description: Repository for Albert - owned by Rabiny
     baseurl: https://copr-be.cloud.fedoraproject.org/results/rabiny/albert/fedora-$releasever-$basearch/
     gpgkey: https://copr-be.cloud.fedoraproject.org/results/rabiny/albert/pubkey.gpg
-    skip_if_unavailable: yes
-    gpgcheck: yes
-  when: ansible_distribution == "Fedora"
-
-- name: Add Visual Studio Code repository (yum)
-  yum_repository:
-    name: copr-mosquito-vscode
-    description: Repository for Visual Studio Code - owned by mosquito
-    baseurl: https://copr-be.cloud.fedoraproject.org/results/mosquito/vscode/fedora-$releasever-$basearch/
-    gpgkey: https://copr-be.cloud.fedoraproject.org/results/mosquito/vscode/pubkey.gpg
     skip_if_unavailable: yes
     gpgcheck: yes
   when: ansible_distribution == "Fedora"
@@ -67,7 +59,6 @@
     - google-chrome-stable
     - nautilus-dropbox
     - albert
-    - vscode
     - vertex-theme
     - arc-theme
     - vivacious-colors-gtk-theme
