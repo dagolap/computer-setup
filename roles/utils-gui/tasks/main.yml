@@ -56,6 +56,8 @@
 - name: Install useful GUI utilities (dnf)
   dnf: name={{ item }} state=present
   with_items:
+    - open-sans-fonts
+    - roboto-fontface-fonts
     - keepass
     - thunderbird
     - firefox
@@ -97,6 +99,7 @@
   with_items:
     - .config/xfce4/terminal/terminalrc
     - .config/VSCode/User
+    - .fonts.conf
   become_user: "{{ user }}"
 
 - stat: path=~/.fonts/FiraCode_1.102/
