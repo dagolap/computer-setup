@@ -75,6 +75,8 @@
     - vivacious-colors-gtk-theme
     - vivacious-colors-icon-theme
     - remmina
+    - Zim
+    - pygtksourceview #required for source view plugin of Zim
   when: ansible_distribution == "Fedora"
 
 - name: Install KeepassHTTP
