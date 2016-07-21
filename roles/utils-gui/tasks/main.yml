@@ -65,6 +65,8 @@
     - firefox
     - alacarte
     - libreoffice
+    - libreoffice-langpack-nb
+    - libreoffice-langpack-nn
     - vim-X11
     - google-chrome-stable
     - nautilus-dropbox
