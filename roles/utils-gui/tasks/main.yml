@@ -39,10 +39,10 @@
 
 - name: Add arc and vertex themes repository
   yum_repository:
-    name: opensuse-horst2180
+    name: opensuse-horst3180
     description: Repository for Arc and Vertex themes - owned by Horst2180
-    baseurl: http://download.opensuse.org/repositories/home:/Horst3180/Fedora_24_standard/
-    gpgkey: http://download.opensuse.org/repositories/home:/Horst3180/Fedora_24_standard//repodata/repomd.xml.key
+    baseurl: http://download.opensuse.org/repositories/home:/Horst3180/Fedora_24/
+    gpgkey: http://download.opensuse.org/repositories/home:/Horst3180/Fedora_24/repodata/repomd.xml.key
     gpgcheck: yes
   when: ansible_distribution == "Fedora"
 
