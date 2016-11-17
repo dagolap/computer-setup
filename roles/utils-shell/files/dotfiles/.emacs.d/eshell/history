@@ -1,0 +1,6 @@
+cd /ssh:dagolap@northrend.bitnexus.net
+cd /ssh:northrend.bitnexus.net
+cd ssh:northrend.bitnexus.net
+cd ssh:dagolap@northrend.bitnexus.net:/home/dagolap
+cd /ssh:dagolap@northrend.bitnexus.net:/home/dagolap
+cd /ssh:dagolap@northrend.bitnexus.net:/home/dagolap

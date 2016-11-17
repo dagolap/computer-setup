@@ -1,0 +1,131 @@
+# TODO: Add Visual Studio Code from repository when microsoft supplies and official one.
+
+- name: Add Dropbox repository (yum)
+  yum_repository:
+    name: dropbox
+    description: Dropbox Repository
+    baseurl: http://linux.dropbox.com/fedora/$releasever/
+    gpgkey: https://linux.dropbox.com/fedora/rpm-public-key.asc
+
+- name: Add Google Chrome repository (yum)
+  yum_repository:
+    name: google-chrome
+    description: Google Chrome Repository
+    baseurl: http://dl.google.com/linux/chrome/rpm/stable/x86_64
+    gpgkey: https://dl.google.com/linux/linux_signing_key.pub
+    gpgcheck: yes
+
+- name: Add Albert repository (yum)
+  yum_repository:
+    name: copr-rabiny-albert
+    description: Repository for Albert - owned by Rabiny
+    baseurl: https://copr-be.cloud.fedoraproject.org/results/rabiny/albert/fedora-$releasever-$basearch/
+    gpgkey: https://copr-be.cloud.fedoraproject.org/results/rabiny/albert/pubkey.gpg
+    skip_if_unavailable: yes
+    gpgcheck: yes
+
+# Required by arc icon theme from Horst2180
+- name: Add moka icon theme repository
+  yum_repository:
+    name: opensuse-snwh-moka
+    description: Repository for Moka Icon theme - owned by snwh
+    baseurl: http://download.opensuse.org/repositories/home:/snwh:/moka/Fedora_23/
+    gpgkey: http://download.opensuse.org/repositories/home:/snwh:/moka/Fedora_23//repodata/repomd.xml.key
+    gpgcheck: yes
+
+- name: Add arc and vertex themes repository
+  yum_repository:
+    name: opensuse-horst3180
+    description: Repository for Arc and Vertex themes - owned by Horst2180
+    baseurl: http://download.opensuse.org/repositories/home:/Horst3180/Fedora_24/
+    gpgkey: http://download.opensuse.org/repositories/home:/Horst3180/Fedora_24/repodata/repomd.xml.key
+    gpgcheck: yes
+
+- name: Add vivacious icon theme repository
+  yum_repository:
+    name: opensuse-pival81
+    description: Repository for vivacious icon theme - owned by Pival81
+    baseurl: http://download.opensuse.org/repositories/home:/Pival81/Fedora_23/
+    gpgkey: http://download.opensuse.org/repositories/home:/Pival81/Fedora_23//repodata/repomd.xml.key
+    gpgcheck: yes
+
+- name: Install useful GUI utilities (dnf)
+  dnf: name={{ item }} state=present
+  with_items:
+    - open-sans-fonts
+    - roboto-fontface-fonts
+    - keepass
+    - thunderbird
+    - firefox
+    - alacarte
+    - libreoffice
+    - libreoffice-langpack-nb
+    - libreoffice-langpack-nn
+    - vim-X11
+    - google-chrome-stable
+    - nautilus-dropbox
+    - albert
+    - vertex-theme
+    - arc-theme
+    - arc-icon-theme
+    - vivacious-colors-gtk-theme
+    - vivacious-colors-icon-theme
+    - remmina
+    - Zim
+    - pygtksourceview #required for source view plugin of Zim
+
+- name: Install KeepassHTTP
+  get_url: 
+    url: https://raw.github.com/pfn/keepasshttp/master/KeePassHttp.plgx 
+    dest: /usr/lib/keepass/KeePassHttp.plgx
+    mode: "0644"
+
+- name: Create required paths for dotfiles
+  file:
+    path: ~/{{ item }}
+    state: directory
+  with_items:
+    - .config/xfce4/terminal
+    - .config/VSCode
+    - .fonts
+  become_user: "{{ user }}"
+
+- name: Install dotfiles for GUI utilities
+  file:
+    src: "{{ role_path }}/files/dotfiles/{{ item }}"
+    dest: ~/{{ item }}
+    state: link
+  with_items:
+    - .config/xfce4/terminal/terminalrc
+    - .config/VSCode/User
+    - .fonts.conf
+  become_user: "{{ user }}"
+
+- stat: path=~/.fonts/FiraCode_1.102
+  become_user: "{{ user }}"
+  register: firacode_files
+
+- name: Download Fira Code archive
+  get_url: url=https://github.com/tonsky/FiraCode/releases/download/1.102/FiraCode_1.102.zip dest=~/Downloads/FiraCode_1.102.zip
+  become_user: "{{ user }}"
+  when: firacode_files.stat.exists == False
+
+- name: Unpack Fira Code archive
+  unarchive: src=~/Downloads/FiraCode_1.102.zip dest=~/.fonts/ copy=no
+  become_user: "{{ user }}"
+  when: firacode_files.stat.exists == False
+
+- name: Update font cache
+  command: fc-cache
+  become_user: "{{ user }}"
+  when: firacode_files.stat.exists == False
+
+- name: Install cabextract (required by corefonts)
+  dnf: name=cabextract state=present
+
+- stat: path=/usr/share/fonts/msttcore/
+  register: msttcore
+
+- name: Install Microsoft corefonts
+  dnf: name=https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm state=present
+  when: msttcore.stat.exists == False

@@ -1,12 +1,5 @@
-- name: Add Node repository (yum)
-  yum_repository:
-    name: nodesource
-    description: Nodesource Repository
-    baseurl: https://rpm.nodesource.com/pub_6.x/fc/$releasever/$basearch
-    gpgkey: https://rpm.nodesource.com/pub/el/NODESOURCE-GPG-SIGNING-KEY-EL
-    gpgcheck: yes
+- include: fedora.yml
   when: ansible_distribution == "Fedora"
 
-- name: Install nodejs tools (dnf)
-  dnf: name=nodejs state=present
-  when: ansible_distribution == "Fedora"
+- include: ubuntu.yml
+  when: ansible_distribution == "Ubuntu"

@@ -1,42 +1,5 @@
-- name: Install useful command line utilities (Fedora)
-  dnf: name={{ item }} state=present
-  with_items:
-    - tmux
-    - git
-    - zsh
-    - mosh
-    - vim
-    - emacs
-  when: ansible_pkg_mgr == "dnf"
+- include: fedora.yml
+  when: ansible_distribution == "Fedora"
 
-- name: Install Vundle for Vim
-  git: repo=https://github.com/VundleVim/Vundle.vim.git dest=~/.vim/bundle/Vundle.vim
-  become_user: "{{ user }}"
-
-- name: Install grb256 theme for Vim
-  git: repo=https://github.com/quanganhdo/grb256.git dest=~/.vim/bundle/grb256
-  become_user: "{{ user }}"
-  
-- name: Download and install vim bundles
-  command: /usr/bin/vim -c VundleInstall -c quitall
-
-- name: Install oh-my-zsh
-  git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=~/.oh-my-zsh
-  become_user: "{{ user }}"
-  
-- name: Change shell to zsh
-  user: name={{ user }} shell=/bin/zsh
-
-- name: Install dotfiles for shell utilities
-  file:
-    src: "{{ role_path }}/files/dotfiles/{{ item }}"
-    dest: ~/{{ item }}
-    state: link
-  with_items:
-    - .emacs.d
-    - .gitconfig
-    - .profile
-    - .vimrc
-    - .zshrc
-    - .tmux.conf
-  become_user: "{{ user }}"
+- include: ubuntu.yml
+  when: ansible_distribution == "Ubuntu"

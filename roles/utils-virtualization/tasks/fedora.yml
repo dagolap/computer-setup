@@ -1,0 +1,14 @@
+- name: Add Virtualbox repository (yum)
+  yum_repository:
+    name: virtualbox
+    description: Virtualbox Repository
+    baseurl: http://download.virtualbox.org/virtualbox/rpm/fedora/$releasever/$basearch/
+    gpgkey: https://www.virtualbox.org/download/oracle_vbox.asc
+    gpgcheck: yes
+    repo_gpgcheck: yes
+
+- name: Install virtualization tools (dnf)
+  dnf: name={{ item }} state=present
+  with_items:
+    - VirtualBox-5.1
+    - vagrant

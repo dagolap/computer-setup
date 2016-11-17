@@ -1,0 +1,9 @@
+- name: Install python development packcages (Fedora)
+  dnf: name={{ item }} state=present
+  with_items:
+    - python
+    - python-virtualenv
+    - python-virtualenvwrapper
+    - python-ipython
+  when: ansible_distribution == "Fedora"
+  

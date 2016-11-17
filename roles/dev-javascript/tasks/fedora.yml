@@ -1,0 +1,10 @@
+- name: Add Node repository (yum)
+  yum_repository:
+    name: nodesource
+    description: Nodesource Repository
+    baseurl: https://rpm.nodesource.com/pub_6.x/fc/$releasever/$basearch
+    gpgkey: https://rpm.nodesource.com/pub/el/NODESOURCE-GPG-SIGNING-KEY-EL
+    gpgcheck: yes
+
+- name: Install nodejs tools (dnf)
+  dnf: name=nodejs state=present
