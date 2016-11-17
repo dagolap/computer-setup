@@ -72,8 +72,10 @@
     - vivacious-colors-icon-theme
     - remmina
     - Zim
-    - pygtksourceview #required for source view plugin of Zim
+    - pygtksourceview # Required for source view plugin of Zim
     - qterminal
+    - pidgin
+    - pidgin-sipe # Required for Skype for business
 
 - name: Install KeepassHTTP
   get_url: 
