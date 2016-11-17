@@ -9,6 +9,7 @@
     - emacs
     - jq
     - the_silver_searcher
+    - progress
 
 - name: Install Vundle for Vim
   git: repo=https://github.com/VundleVim/Vundle.vim.git dest=~/.vim/bundle/Vundle.vim
