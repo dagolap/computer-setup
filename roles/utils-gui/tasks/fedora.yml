@@ -73,6 +73,7 @@
     - remmina
     - Zim
     - pygtksourceview #required for source view plugin of Zim
+    - qterminal
 
 - name: Install KeepassHTTP
   get_url: 
