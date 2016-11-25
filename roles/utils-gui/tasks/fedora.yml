@@ -54,7 +54,7 @@
   with_items:
     - open-sans-fonts
     - roboto-fontface-fonts
-    - keepass
+    - keepassx
     - thunderbird
     - firefox
     - alacarte
