@@ -1,6 +1,4 @@
 - hosts: localhost
-  vars:
-    user: dagolap
   roles:
     - utils-shell
     - utils-neovim
@@ -9,3 +7,4 @@
     - utils-docker
     - dev-python
     - dev-javascript
+
