@@ -3,6 +3,7 @@
     user: dagolap
   roles:
     - utils-shell
+    - utils-neovim
     - utils-gui
     - utils-virtualization
     - utils-docker

@@ -1,12 +1,3 @@
-- name: Add neovim repository
-  yum_repository:
-    name: neovim
-    description: Neovim repository - owned by dperson
-    baseurl: https://copr-be.cloud.fedoraproject.org/results/dperson/neovim/fedora-$releasever-$basearch/
-    gpgkey: https://copr-be.cloud.fedoraproject.org/results/dperson/neovim/pubkey.gpg
-    skip_if_unavailable: yes
-    gpgcheck: yes
-
 - name: Install useful command line utilities (Fedora)
   dnf: name={{ item }} state=present
   with_items:
@@ -20,8 +11,6 @@
     - jq
     - the_silver_searcher
     - progress
-    - neovim
-    - python-neovim
 
 - name: Install Vundle for Vim
   git: repo=https://github.com/VundleVim/Vundle.vim.git dest=~/.vim/bundle/Vundle.vim
