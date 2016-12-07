@@ -14,7 +14,7 @@
     - python-neovim
 
 - name: Install dein plugin manager
-  shell: curl -s -L https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh | sh -s "~/.config/nvim/dein"
+  shell: curl -s -L https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh | sh -s "{{ user_home}}/.config/nvim/dein"
   become_user: "{{ user }}"
 
 - name: Configure neovim alternatives
