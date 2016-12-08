@@ -35,7 +35,7 @@
   become_user: "{{ user }}"
 
 - name: Install fzf
-  command: "{{ user_home }}/.fzf/install"
+  command: "{{ user_home }}/.fzf/install --no-key-bindings"
   become_user: "{{ user }}"
 
 - name: Install dotfiles for shell utilities
