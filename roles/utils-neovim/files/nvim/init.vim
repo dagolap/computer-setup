@@ -10,6 +10,11 @@ call dein#add('editorconfig/editorconfig-vim')
 " UI
 call dein#add('scrooloose/nerdtree')
 call dein#add('frankier/neovim-colors-solarized-truecolor-only')
+call dein#add('vim-airline/vim-airline')
+call dein#add('ryanoasis/vim-devicons')
+call dein#add('tiagofumo/vim-nerdtree-syntax-highlight')
+" call dein#add('Yggdroot/indentline')
+" call dein#add('chrisbra/Colorizer')
 
 " Completion
 call dein#add('Shougo/deoplete.nvim')
@@ -67,5 +72,7 @@ let g:deoplete#omni_patterns.html = ''
 
 "" KEYBINDINGS ""
 " Meta + Backspace = Delete previous word
+let mapleader = "\<Space>"
+
 :imap <M-BS> <C-W>
 
