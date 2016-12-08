@@ -30,6 +30,14 @@
 - name: Change shell to zsh
   user: name={{ user }} shell=/bin/zsh
 
+- name: Download fzf
+  git: repo="https://github.com/junegunn/fzf.git" dest="{{ user_home }}/.fzf" depth=1 update=yes
+  become_user: "{{ user }}"
+
+- name: Install fzf
+  command: "{{ user_home }}/.fzf/install"
+  become_user: "{{ user }}"
+
 - name: Install dotfiles for shell utilities
   file:
     src: "{{ role_path }}/files/dotfiles/{{ item }}"

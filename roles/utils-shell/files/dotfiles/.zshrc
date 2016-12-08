@@ -81,3 +81,5 @@ emulate sh
 . ~/.profile
 emulate zsh
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
