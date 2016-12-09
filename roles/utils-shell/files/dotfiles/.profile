@@ -1,6 +1,6 @@
 export PATH="$HOME/bin:$PATH"
 
-export JAVA_HOME='/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.111-3.b16.fc25.x86_64/'
+export JAVA_HOME='/usr/lib/jvm/java-1.8.0/'
 export GRADLE_HOME='/usr/share/gradle'
 
 export VAGRANT_DEFAULT_PROVIDER='virtualbox'
