@@ -49,6 +49,14 @@
     gpgkey: http://download.opensuse.org/repositories/home:/Pival81/Fedora_23//repodata/repomd.xml.key
     gpgcheck: yes
 
+- name: Add Visual Studio Code repository
+  yum_repository:
+    name: vscode
+    description: Repository for Microsoft Visual Studio Code
+    baseurl: https://packages.microsoft.com/yumrepos/vscode
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    gpgcheck: yes
+
 - name: Install useful GUI utilities (dnf)
   dnf: name={{ item }} state=present
   with_items:
@@ -76,6 +84,7 @@
     - qterminal
     - pidgin
     - pidgin-sipe # Required for Skype for business
+    - code
 
 - name: Install KeepassHTTP
   get_url: 
