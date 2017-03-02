@@ -1,10 +1,17 @@
 - hosts: localhost
   roles:
-    - utils-shell
-    - utils-neovim
-    - utils-gui
-    - utils-virtualization
-    - utils-docker
-    - dev-python
-    - dev-javascript
+    - role: utils-shell
+      tags: utils-shell
+    - role: utils-neovim
+      tags: utils-neovim
+    - role: utils-gui
+      tags: utils-gui
+    - role: utils-virtualization
+      tags: utils-virtualization
+    - role: utils-docker
+      tags: utils-docker
+    - role: dev-python
+      tags: dev-python
+    - role: dev-javascript
+      tags: dev-javascript
 
