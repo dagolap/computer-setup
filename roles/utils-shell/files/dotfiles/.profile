@@ -1,7 +1,7 @@
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:/opt/gradle/gradle-3.5/bin:$PATH"
 
 export JAVA_HOME='/usr/lib/jvm/java-1.8.0/'
-export GRADLE_HOME='/usr/share/gradle'
+export GRADLE_HOME='/opt/gradle/gradle-3.5/'
 
 export VAGRANT_DEFAULT_PROVIDER='virtualbox'
 
