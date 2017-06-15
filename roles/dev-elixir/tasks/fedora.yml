@@ -1,0 +1,2 @@
+- name: Install elixir (dnf)
+  dnf: name=elixir state=present
