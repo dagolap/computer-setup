@@ -1,0 +1,14 @@
+- hosts: northrend
+  roles:
+    - role: utils-shell
+      tags: [utils, utils-shell]
+    - role: utils-neovim
+      tags: [utils, utils-neovim]
+    - role: utils-docker
+      tags: [utils, utils-docker]
+    - role: dev-python
+      tags: [dev, dev-python]
+    - role: dev-javascript
+      tags: [dev, dev-javascript]
+    - role: dev-elixir
+      tags: [dev, dev-elixir]

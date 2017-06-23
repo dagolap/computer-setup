@@ -2,14 +2,4 @@
   dnf: name=docker state=present
   when: ansible_pkg_mgr == "dnf"
 
-- name: Ensure docker group
-  group: name=docker state=present
-
-- name: Add user to docker group
-  user: name={{ user }} groups=docker append=yes
-  
-- name: Ensure docker service is enabled
-  service: name=docker enabled=yes state=started
-
-- name: Make sure docker pidfile is owned by docker group
-  file: path=/var/run/docker.sock state=file group=docker
+- include: common.yml

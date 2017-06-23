@@ -1,1 +1,10 @@
-- debug: msg="No configuration available for Ubuntu based distros."
+- name: Add neovim repository
+  apt_repository: repo='ppa:neovim-ppa/stable'
+
+- name: Install neovim (Ubuntu)
+  apt: name={{ item }} state=present
+  with_items:
+    - neovim
+    - python-neovim
+
+- include: common.yml

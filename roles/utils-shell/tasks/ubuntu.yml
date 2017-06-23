@@ -1,1 +1,15 @@
-- debug: msg="No configuration available for Ubuntu based distros."
+- name: Install useful command line utilities (Ubuntu)
+  apt: name={{ item }} state=present
+  with_items:
+    - tmux
+    - git
+    - zsh
+    - curl
+    - mosh
+    - vim
+    - emacs
+    - jq
+    - silversearcher-ag
+    - progress
+
+- include: common.yml

@@ -1,1 +1,4 @@
-- debug: msg="No configuration available for Ubuntu based distros."
+- name: Install elixir(apt)
+  apt: name=elixir state=present
+
+- include: common.yml

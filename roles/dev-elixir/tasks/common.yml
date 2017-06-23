@@ -1,0 +1,13 @@
+- name: Install/update hex
+  shell: mix local.hex
+  become_user: "{{ user }}"
+
+- name: Check if phoenix is already installed
+  stat: path=~/.mix/archives/phoenix_new/
+  become_user: "{{ user }}"
+  register: phoenix_files
+
+- name: Install phoenix web framework
+  shell: mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez --force
+  become_user: "{{ user }}"
+  when: phoenix_files.stat.exists == False

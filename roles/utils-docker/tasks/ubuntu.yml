@@ -1,1 +1,18 @@
-- debug: msg="No configuration available for Ubuntu based distros."
+- name: Install prerequisites (apt)
+  apt: name={{ item }} state=present
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - software-properties-common
+
+- name: Add docker apt key
+  apt_key: data="{{ lookup('file', 'docker-release-tool.asc') }}" state=present
+
+- name: Add apt repo for docker
+  apt_repository: repo='deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable'
+
+- name: Install docker
+  apt: name=docker-ce state=present
+
+- include: common.yml
