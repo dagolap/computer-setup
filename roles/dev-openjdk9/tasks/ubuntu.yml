@@ -1,3 +1,0 @@
-- name: Install openjdk
-  apt: pkg=openjdk-9-jdk state=latest
-
