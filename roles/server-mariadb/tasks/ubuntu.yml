@@ -1,2 +1,9 @@
 - name: Install mariadb
   apt: pkg=mariadb-server state=latest
+
+- name: Copy mariadb config
+  template: src=my.cnf.j2 dest=/etc/mysql/my.cnf owner=root group=root mode=0755
+
+- name: Reload mariadb settings
+  service: name=mysql state=restarted
+
