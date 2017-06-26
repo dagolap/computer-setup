@@ -11,5 +11,6 @@
     - jq
     - silversearcher-ag
     - progress
+    - htop
 
 - include: common.yml
