@@ -18,5 +18,7 @@
       tags: [server, server-nginx]
     - role: server-mariadb
       tags: [server, server-mariadb]
+    - role: server-php
+      tags: [server, server-php]
     - role: northrend-div
       tags: [northrend, northrend-div]
