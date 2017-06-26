@@ -22,3 +22,5 @@
       tags: [server, server-php]
     - role: northrend-div
       tags: [northrend, northrend-div]
+    - role: dev-openjdk9
+      tags: [dev, dev-openjdk9]
