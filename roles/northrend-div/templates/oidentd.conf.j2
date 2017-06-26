@@ -1,0 +1,35 @@
+# This file is managed by Ansible - update configuration and redeploy to change!
+
+# Configuration for oidentd
+# see oidentd.conf(5)
+# 
+default {
+        default {
+                deny spoof
+                deny spoof_all
+                deny spoof_privport
+                allow random
+                allow random_numeric
+                allow numeric
+                deny hide
+        }
+}
+
+user "root" {
+        default {
+                force reply "djgrowl"
+        }
+}
+
+user "dagolap" {
+        default {
+                force reply "slegga"
+        }
+}
+
+user "kalvatn" {
+        default {
+                force reply "chauney"
+        }
+}
+
