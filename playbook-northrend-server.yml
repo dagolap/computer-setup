@@ -24,3 +24,5 @@
       tags: [northrend, northrend-div]
     - role: dev-openjdk8
       tags: [dev, dev-openjdk8]
+    - role: service-sbsk-tools
+      tags: [northrend, service-sbsk-tools]

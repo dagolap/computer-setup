@@ -1,0 +1,15 @@
+[Unit]
+Description=SBSK Tools site
+
+[Service]
+User=services
+# The configuration file application.properties should be here:
+WorkingDirectory=/opt/sbsk-tools
+ExecStart=/usr/bin/java -Xmx256m -jar sbsk-tools.jar
+SuccessExitStatus=143
+TimeoutStopSec=10
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
