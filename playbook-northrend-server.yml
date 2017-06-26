@@ -16,5 +16,7 @@
       tags: [utils, utils-server]
     - role: server-nginx
       tags: [server, server-nginx]
+    - role: server-mariadb
+      tags: [server, server-mariadb]
     - role: northrend-div
       tags: [northrend, northrend-div]
