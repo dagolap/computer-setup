@@ -1,4 +1,7 @@
 - name: Install elixir(dnf)
-  dnf: name=elixir state=present
+  dnf: name={{ item }} state=present
+  with_items:
+    - erlang
+    - elixir
 
 - include: common.yml
