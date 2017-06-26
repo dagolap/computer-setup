@@ -1,2 +1,13 @@
 - name: Install PHP
-  apt: pkg=php-fpm state=latest
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - php-fpm
+    - php-mysql
+    - php-mysqli
+    - php-gd
+    - php-curl
+    - php-mbstring
+    - imagemagick
+    - php-imagick
+    - unzip
+
