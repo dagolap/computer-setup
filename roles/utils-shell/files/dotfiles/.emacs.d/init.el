@@ -86,6 +86,11 @@
     ;; Haskell mode
     haskell-mode
 
+    ;; Erlang og eliksir
+    erlang
+    elixir-mode
+    elixir-yasnippets
+
     ;; Trestruktur-browser
     neotree
 
@@ -98,8 +103,9 @@
     ;; Elm mode
     elm-mode
 
-    ;; Json-mode for reformatting etc.
+    ;; General data file formats
     json-mode
+    yaml-mode
     ))
 
 ;; On OS X, an Emacs instance started from the graphical user
@@ -176,3 +182,18 @@
 
 ;; Start company mode for all kinds of fun
 (add-hook 'after-init-hook 'global-company-mode)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(coffee-tab-width 2)
+ '(package-selected-packages
+   (quote
+    (yasnippet tagedit smex scss-mode projectile paredit neotree material-theme magit less-css-mode json-mode js2-mode ido-ubiquitous haskell-mode emmet-mode elm-mode company clojure-mode-extra-font-locking cider))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
