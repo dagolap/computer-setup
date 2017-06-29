@@ -6,6 +6,8 @@
       tags: [utils, utils-neovim]
     - role: utils-docker
       tags: [utils, utils-docker]
+    - role: service-portainer
+      tags: [northrend, service-portainer]
     - role: dev-python
       tags: [dev, dev-python]
     - role: dev-javascript
@@ -16,6 +18,8 @@
       tags: [utils, utils-server]
     - role: server-nginx
       tags: [server, server-nginx]
+    - role: server-certbot
+      tags: [server, server-certbot]
     - role: server-mariadb
       tags: [server, server-mariadb]
     - role: server-php
