@@ -12,5 +12,6 @@
     - the_silver_searcher
     - progress
     - htop
+    - inotify-tools
 
 - include: common.yml

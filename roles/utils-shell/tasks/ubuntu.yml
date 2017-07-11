@@ -12,5 +12,6 @@
     - silversearcher-ag
     - progress
     - htop
+    - inotify-tools
 
 - include: common.yml
