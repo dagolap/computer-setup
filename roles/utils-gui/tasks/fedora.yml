@@ -29,24 +29,24 @@
   yum_repository:
     name: opensuse-snwh-moka
     description: Repository for Moka Icon theme - owned by snwh
-    baseurl: http://download.opensuse.org/repositories/home:/snwh:/moka/Fedora_24/
-    gpgkey: http://download.opensuse.org/repositories/home:/snwh:/moka/Fedora_24//repodata/repomd.xml.key
+    baseurl: http://download.opensuse.org/repositories/home:/snwh:/moka/Fedora_25/
+    gpgkey: http://download.opensuse.org/repositories/home:/snwh:/moka/Fedora_25//repodata/repomd.xml.key
     gpgcheck: yes
 
 - name: Add arc and vertex themes repository
   yum_repository:
     name: opensuse-horst3180
     description: Repository for Arc and Vertex themes - owned by Horst2180
-    baseurl: http://download.opensuse.org/repositories/home:/Horst3180/Fedora_24/
-    gpgkey: http://download.opensuse.org/repositories/home:/Horst3180/Fedora_24/repodata/repomd.xml.key
+    baseurl: http://download.opensuse.org/repositories/home:/Horst3180/Fedora_25/
+    gpgkey: http://download.opensuse.org/repositories/home:/Horst3180/Fedora_25/repodata/repomd.xml.key
     gpgcheck: yes
 
 - name: Add vivacious icon theme repository
   yum_repository:
     name: opensuse-pival81
     description: Repository for vivacious icon theme - owned by Pival81
-    baseurl: http://download.opensuse.org/repositories/home:/Pival81/Fedora_23/
-    gpgkey: http://download.opensuse.org/repositories/home:/Pival81/Fedora_23//repodata/repomd.xml.key
+    baseurl: http://download.opensuse.org/repositories/home:/Pival81/Fedora_25/
+    gpgkey: http://download.opensuse.org/repositories/home:/Pival81/Fedora_25//repodata/repomd.xml.key
     gpgcheck: yes
 
 - name: Add Visual Studio Code repository
