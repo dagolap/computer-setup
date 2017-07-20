@@ -1,0 +1,17 @@
+- name: Install basic shell utilities (Fedora)
+  dnf: name={{ item }} state=present
+  with_items:
+    - curl
+    - emacs
+    - git
+    - htop
+    - inotify-tools
+    - jq
+    - mosh
+    - progress
+    - the_silver_searcher
+    - tmux
+    - vim
+    - zsh
+
+- include: common.yml

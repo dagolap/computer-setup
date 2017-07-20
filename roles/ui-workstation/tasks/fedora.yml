@@ -1,0 +1,42 @@
+- name: Add Dropbox repository (yum)
+  yum_repository:
+    name: dropbox
+    description: Dropbox Repository
+    baseurl: http://linux.dropbox.com/fedora/$releasever/
+    gpgkey: https://linux.dropbox.com/fedora/rpm-public-key.asc
+
+- name: Add Google Chrome repository (yum)
+  yum_repository:
+    name: google-chrome
+    description: Google Chrome Repository
+    baseurl: http://dl.google.com/linux/chrome/rpm/stable/x86_64
+    gpgkey: https://dl.google.com/linux/linux_signing_key.pub
+    gpgcheck: yes
+
+- name: Add Albert repository (yum)
+  yum_repository:
+    name: copr-rabiny-albert
+    description: Repository for Albert - owned by Rabiny
+    baseurl: https://copr-be.cloud.fedoraproject.org/results/rabiny/albert/fedora-$releasever-$basearch/
+    gpgkey: https://copr-be.cloud.fedoraproject.org/results/rabiny/albert/pubkey.gpg
+    skip_if_unavailable: yes
+    gpgcheck: yes
+
+- name: Install useful GUI utilities
+  dnf: name={{ item }} state=present
+  with_items:
+    - alacarte
+    - albert
+    - firefox
+    - google-chrome-unstable
+    - keepassxc
+    - libreoffice
+    - libreoffice-langpack-nb
+    - libreoffice-langpack-nn
+    - nautilus-dropbox
+    - pidgin
+    - pidgin-sipe # Required for Skype for business
+    - pygtksourceview # Required for source view plugin of Zim
+    - remmina
+    - thunderbird
+    - Zim

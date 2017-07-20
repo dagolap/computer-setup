@@ -1,3 +1,2 @@
 - name: Install openjdk
-  apt: pkg=openjdk-8-jdk state=latest
-
+  apt: pkg=openjdk-8-jdk state=present

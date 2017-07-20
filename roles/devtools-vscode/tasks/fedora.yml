@@ -1,0 +1,23 @@
+- name: Add Visual Studio Code repository
+  yum_repository:
+    name: vscode
+    description: Repository for Microsoft Visual Studio Code
+    baseurl: https://packages.microsoft.com/yumrepos/vscode
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    gpgcheck: yes
+
+- name: Install Visual Studio Code
+  dnf: name=code state=present
+
+- name: Create required paths for dotfiles
+  file:
+    path: ~/.config/Code
+    state: directory
+  become_user: "{{ user }}"
+
+- name: Install dotfiles
+  file:
+    src: "{{ role_path }}/files/dotfiles/.config/Code/User"
+    dest: ~/.config/Code/User
+    state: link
+  become_user: "{{ user }}"

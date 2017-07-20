@@ -1,0 +1,15 @@
+- name: Install basic shell utilities (Ubuntu)
+  apt: name={{ item }} state=present
+  with_items:
+    - curl
+    - git
+    - htop
+    - inotify-tools
+    - jq
+    - mosh
+    - progress
+    - silversearcher-ag
+    - tmux
+    - zsh
+
+- include: common.yml

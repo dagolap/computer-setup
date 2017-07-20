@@ -1,0 +1,20 @@
+- name: Link neovim config
+  file:
+    src: "{{ role_path }}/files/nvim"
+    dest: "~/.config/nvim"
+    state: link
+  become_user: "{{ user }}"
+
+- name: Install dein plugin manager
+  shell: curl -s -L https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh | sh -s "{{ user_home}}/.config/nvim/dein"
+  become_user: "{{ user }}"
+
+- name: Configure neovim alternatives
+  alternatives: name="{{ item }}" link=/usr/local/bin/{{ item }} path=/usr/bin/nvim
+  with_items: 
+    - vi
+    - vim
+
+- name: Install neovim dein plugins
+  command: nvim +"call dein#update()" +"qall" --headless
+  become_user: "{{ user }}"

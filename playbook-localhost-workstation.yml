@@ -1,19 +1,24 @@
 - hosts: localhost
   roles:
-    - role: utils-shell
-      tags: [utils, utils-shell]
-    - role: utils-neovim
-      tags: [utils, utils-neovim]
-    - role: utils-gui
-      tags: [utils, utils-gui]
-    - role: utils-virtualization
-      tags: [utils, utils-virtualization]
+    - role: shell-basics
+      tags: [shell, shell-basics]
+    - role: ui-basics
+      tags: [ui, ui-basics]
+    - role: ui-workstation
+      tags: [ui, workstation]
+    - role: devtools-vscode
+      tags: [ui, devtools, vscode]
+    - role: devtools-neovim
+      tags: [shell, devtools, neovim]
     - role: utils-docker
-      tags: [utils, utils-docker]
-    - role: dev-python
-      tags: [dev, dev-python]
+      tags: [utils, docker]
+    - role: utils-virtualization
+      tags: [utils, virtualization]
     - role: dev-javascript
-      tags: [dev, dev-javascript]
+      tags: [dev, javascript]
     - role: dev-elixir
-      tags: [dev, dev-elixir]
-
+      tags: [dev, elixir]
+    - role: dev-elm
+      tags: [dev, elm]
+    - role: dev-openjdk8
+      tags: [dev, openjdk8]

@@ -13,5 +13,6 @@ Repository to set up a new computer.
 
 ## TODO
 
+* Split out stuff that doesnt require admin so it can be used on arbitrary machines. (E.g. only dotfiles and local binaries)
 * Java dev environment (Oracle java, IntelliJ, gradle, ++)
 * Configuration of GUI-stuff (desktops, keyboard shortcuts, themes, icons, etc.)

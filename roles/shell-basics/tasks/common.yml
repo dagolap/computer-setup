@@ -1,0 +1,30 @@
+- name: Install oh-my-zsh
+  git:
+    repo: https://github.com/robbyrussell/oh-my-zsh.git
+    dest: ~/.oh-my-zsh
+  become_user: "{{ user }}"
+
+- name: Install dotfiles for shell utilities
+  file:
+    src: "{{ role_path }}/files/dotfiles/{{ item }}"
+    dest: ~/{{ item }}
+    state: link
+  with_items:
+    - .gitconfig
+    - .profile
+    - .tmux.conf
+    - .zshrc
+    - .spacemacs
+  become_user: "{{ user }}"
+
+- name: Change shell to zsh
+  user:
+    name: "{{ user }}"
+    shell: /bin/zsh
+
+- name: Install spacemacs
+  git:
+    repo: https://github.com/syl20bnr/spacemacs
+    dest: ~/.emacs.d
+    update: no
+  become_user: "{{ user }}"
