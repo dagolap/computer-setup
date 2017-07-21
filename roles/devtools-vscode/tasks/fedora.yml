@@ -7,7 +7,7 @@
     gpgcheck: yes
 
 - name: Install Visual Studio Code
-  dnf: name=code state=present update_cache=yes
+  dnf: name=code state=present
 
 - name: Create required paths for dotfiles
   file:

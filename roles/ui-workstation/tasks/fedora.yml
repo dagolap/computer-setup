@@ -23,7 +23,7 @@
     gpgcheck: yes
 
 - name: Install useful GUI utilities
-  dnf: name={{ item }} state=present update_cache=yes
+  dnf: name={{ item }} state=present
   with_items:
     - alacarte
     - albert
