@@ -1,4 +1,4 @@
 - name: Install basic server utilities (Fedora)
-  dnf: name={{ item }} state=present
+  yum: name={{ item }} state=present
   with_items:
     - fail2ban-hostsdeny

@@ -7,7 +7,7 @@
     gpgcheck: yes
 
 - name: Install Visual Studio Code
-  dnf: name=code state=present
+  yum: name=code state=present update_cache=yes
 
 - name: Create required paths for dotfiles
   file:

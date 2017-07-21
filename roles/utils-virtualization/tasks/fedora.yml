@@ -1,4 +1,4 @@
-- name: Add Virtualbox repository (yum)
+- name: Add Virtualbox repository
   yum_repository:
     name: virtualbox
     description: Virtualbox Repository
@@ -7,8 +7,8 @@
     gpgcheck: yes
     repo_gpgcheck: yes
 
-- name: Install virtualization tools (dnf)
-  dnf: name={{ item }} state=present
+- name: Install virtualization tools
+  yum: name={{ item }} state=present update_cache=yes
   with_items:
     - VirtualBox-5.1
     - vagrant

@@ -1,2 +1,2 @@
 - name: Install openjdk
-  dnf: pkg=java-1.8.0-openjdk state=present
+  yum: pkg=java-1.8.0-openjdk state=present
