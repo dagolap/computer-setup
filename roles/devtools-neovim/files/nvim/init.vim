@@ -31,7 +31,7 @@ call dein#add('airblade/vim-gitgutter')
 call dein#add('Xuyuanp/nerdtree-git-plugin')
 
 " Search / replace / etc.
-call dein#add('junegunn/fzf', {'build': './install --all' })
+call dein#add('junegunn/fzf', {'build': './install --all --no-key-bindings --no-completion --update-rc' })
 call dein#add('junegunn/fzf.vim')
 
 " Language support
