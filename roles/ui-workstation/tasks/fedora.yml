@@ -22,8 +22,6 @@
     skip_if_unavailable: yes
     gpgcheck: yes
 
-- command: dnf makecache
-
 - name: Install useful GUI utilities
   dnf: name={{ item }} state=present
   with_items:

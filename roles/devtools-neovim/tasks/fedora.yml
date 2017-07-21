@@ -7,8 +7,6 @@
     skip_if_unavailable: yes
     gpgcheck: yes
 
-- command: dnf makecache
-
 - name: Install Neovim (Fedora)
   dnf: name={{ item }} state=present
   with_items:

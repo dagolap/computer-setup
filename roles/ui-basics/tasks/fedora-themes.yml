@@ -15,8 +15,6 @@
     gpgkey: http://download.opensuse.org/repositories/home:/Horst3180/Fedora_25/repodata/repomd.xml.key
     gpgcheck: yes
 
-- command: dnf makecache
-
 - name: Install UI themes
   dnf: name={{ item }} state=present
   with_items:
