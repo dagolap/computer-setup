@@ -8,7 +8,7 @@
     repo_gpgcheck: yes
 
 - name: Install virtualization tools (dnf)
-  dnf: name={{ item }} state=present
+  dnf: name={{ item }} state=present update_cache=yes
   with_items:
     - VirtualBox-5.1
     - vagrant

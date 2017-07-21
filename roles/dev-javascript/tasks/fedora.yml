@@ -7,4 +7,4 @@
     gpgcheck: yes
 
 - name: Install nodejs tools
-  dnf: name=nodejs state=present
+  dnf: name=nodejs state=present update_cache=yes
