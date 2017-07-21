@@ -6,5 +6,7 @@
     gpgkey: https://rpm.nodesource.com/pub/el/NODESOURCE-GPG-SIGNING-KEY-EL
     gpgcheck: yes
 
+- command: dnf makecache
+
 - name: Install nodejs tools
   dnf: name=nodejs state=present

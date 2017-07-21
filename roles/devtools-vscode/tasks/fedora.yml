@@ -6,6 +6,8 @@
     gpgkey: https://packages.microsoft.com/keys/microsoft.asc
     gpgcheck: yes
 
+- command: dnf makecache
+
 - name: Install Visual Studio Code
   dnf: name=code state=present
 
