@@ -7,4 +7,4 @@
     gpgcheck: yes
 
 - name: Install nodejs tools
-  yum: name=nodejs state=present update_cache=yes
+  dnf: name=nodejs state=present

@@ -16,7 +16,7 @@
     gpgcheck: yes
 
 - name: Install UI themes
-  yum: name={{ item }} state=present update_cache=yes
+  dnf: name={{ item }} state=present
   with_items:
     - arc-theme
     - arc-icon-theme

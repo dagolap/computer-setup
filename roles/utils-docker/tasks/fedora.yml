@@ -1,4 +1,4 @@
 - name: Install docker
-  yum: name=docker state=present
+  dnf: name=docker state=present
 
 - include: common.yml

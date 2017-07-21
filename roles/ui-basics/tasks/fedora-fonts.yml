@@ -62,18 +62,18 @@
   register: msttcore
 
 - name: Install cabextract if required
-  yum: name=cabextract state=present
+  dnf: name=cabextract state=present
   when: msttcore.stat.exists == False
 
 - name: Install Microsoft corefonts
-  yum: name=https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm state=present
+  dnf: name=https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm state=present
   when: msttcore.stat.exists == False
 
 #
 # Install some nice basic fonts from the repos
 #
 - name: Install some nice basic fonts from the repos
-  yum: name={{ item }} state=present
+  dnf: name={{ item }} state=present
   with_items:
     - open-sans-fonts
     - roboto-fontface-fonts
