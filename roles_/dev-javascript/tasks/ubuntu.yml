@@ -1,8 +1,0 @@
-- name: Add nodejs apt key
-  apt_key: data="{{ lookup('file', 'nodesource.gpg.key') }}" state=present
-
-- name: Add apt repo for nodejs
-  apt_repository: repo='deb https://deb.nodesource.com/node_8.x/ {{ ansible_distribution_release }} main'
-
-- name: Install nodejs
-  apt: name=nodejs state=present

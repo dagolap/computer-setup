@@ -1,2 +1,0 @@
-- name: Install nginx
-  apt: pkg=nginx state=latest

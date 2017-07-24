@@ -1,6 +1,0 @@
-- name: Install server tools (Ubuntu)
-  apt: name={{ item }} state=present
-  with_items:
-    - molly-guard
-    - fail2ban
-  

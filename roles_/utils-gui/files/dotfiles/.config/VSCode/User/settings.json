@@ -1,8 +1,0 @@
-// Place your settings in this file to overwrite the default settings
-{
-    // Controls the font family.
-	"editor.fontFamily": "Fira Code",
-
-	// Font ligatures
-	"editor.fontLigatures": true
-}

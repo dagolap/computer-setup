@@ -1,5 +1,0 @@
-- name: Copy sbsk-tools service
-  template: src=sbsk-tools.service.j2 dest=/etc/systemd/system/sbsk-tools.service owner=root group=root mode=0755
-
-- name: Ensure sbsk-tools service is started
-  command: systemctl daemon-reload
