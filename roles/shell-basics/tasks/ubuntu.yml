@@ -2,6 +2,7 @@
   apt: name={{ item }} state=present
   with_items:
     - curl
+    - emacs
     - git
     - htop
     - inotify-tools
@@ -10,6 +11,7 @@
     - progress
     - silversearcher-ag
     - tmux
+    - vim
     - zsh
 
 - include: common.yml

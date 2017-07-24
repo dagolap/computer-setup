@@ -8,16 +8,3 @@
 
 - name: Install Visual Studio Code
   dnf: name=code state=present
-
-- name: Create required paths for dotfiles
-  file:
-    path: ~/.config/Code
-    state: directory
-  become_user: "{{ user }}"
-
-- name: Install dotfiles
-  file:
-    src: "{{ role_path }}/files/dotfiles/.config/Code/User"
-    dest: ~/.config/Code/User
-    state: link
-  become_user: "{{ user }}"

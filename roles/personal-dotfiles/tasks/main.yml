@@ -1,0 +1,24 @@
+- name: Create required paths for fonts
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - ~/.config/fontconfig
+    - ~/.config/Code
+  become_user: "{{ user }}"
+
+- name: Install dotfiles for emacs
+  file:
+    src: "{{ role_path }}/files/dotfiles/{{ item }}"
+    dest: ~/{{ item }}
+    state: link
+    force: yes
+  with_items:
+    - .emacs.d
+    - .gitconfig
+    - .profile
+    - .tmux.conf
+    - .zshrc
+    - .config/fontconfig/20-no-embedded.conf
+    - .config/Code/User
+  become_user: "{{ user }}"

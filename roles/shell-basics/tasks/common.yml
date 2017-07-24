@@ -4,19 +4,6 @@
     dest: ~/.oh-my-zsh
   become_user: "{{ user }}"
 
-- name: Install dotfiles for shell utilities
-  file:
-    src: "{{ role_path }}/files/dotfiles/{{ item }}"
-    dest: ~/{{ item }}
-    state: link
-  with_items:
-    - .gitconfig
-    - .profile
-    - .tmux.conf
-    - .zshrc
-    - .spacemacs
-  become_user: "{{ user }}"
-
 - name: Change shell to zsh
   user:
     name: "{{ user }}"

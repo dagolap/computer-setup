@@ -7,16 +7,6 @@
     state: directory
   with_items:
     - "{{ font_path }}"
-    - ~/.config/fontconfig
-  become_user: "{{ user }}"
-
-- name: Install fontconfig that disable embedded bitmap fonts (looks ugly on calibri etc.)
-  file:
-    src: "{{ role_path }}/files/dotfiles/{{ item }}"
-    dest: ~/{{ item }}
-    state: link
-  with_items:
-    - .config/fontconfig/20-no-embedded.conf
   become_user: "{{ user }}"
 
 #
