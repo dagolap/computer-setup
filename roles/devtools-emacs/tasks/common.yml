@@ -1,0 +1,9 @@
+- name: Install dotfiles for emacs
+  file:
+    src: "{{ role_path }}/files/dotfiles/{{ item }}"
+    dest: ~/{{ item }}
+    state: link
+    force: yes
+  with_items:
+    - .emacs.d
+  become_user: "{{ user }}"

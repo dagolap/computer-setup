@@ -1,0 +1,4 @@
+- name: Install emacs
+  apt: name=emacs state=present
+
+- include: common.yml

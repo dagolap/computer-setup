@@ -21,10 +21,3 @@
   user:
     name: "{{ user }}"
     shell: /bin/zsh
-
-- name: Install spacemacs
-  git:
-    repo: https://github.com/syl20bnr/spacemacs
-    dest: ~/.emacs.d
-    update: no
-  become_user: "{{ user }}"

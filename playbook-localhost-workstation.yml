@@ -10,6 +10,8 @@
       tags: [ui, devtools, vscode]
     - role: devtools-neovim
       tags: [shell, devtools, neovim]
+    - role: devtools-emacs
+      tags: [shell, devtools, emacs]
     - role: utils-docker
       tags: [utils, docker]
     - role: utils-virtualization

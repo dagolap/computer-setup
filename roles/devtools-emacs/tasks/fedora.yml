@@ -1,0 +1,4 @@
+- name: Install emacs
+  dnf: name=emacs state=present
+
+- include: common.yml
