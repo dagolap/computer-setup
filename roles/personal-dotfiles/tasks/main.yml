@@ -20,6 +20,6 @@
     - .profile
     - .tmux.conf
     - .zshrc
-    - .config/fontconfig/20-no-embedded.conf
+    - .config/fontconfig/50-no-embedded.conf
     - .config/Code/User
   become_user: "{{ user }}"
