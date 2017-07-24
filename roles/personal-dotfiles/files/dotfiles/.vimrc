@@ -4,13 +4,14 @@ scriptencoding utf-8
 if has('nvim')
   if empty(glob('~/.config/nvim/autoload/plug.vim'))
     silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
   endif
 else
   if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
   endif
 endif
-autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 
 if has('nvim')
   call plug#begin('~/.config/nvim/plugged')
@@ -45,7 +46,6 @@ Plug 'slashmili/alchemist.vim' "Elixir
 " Neovim specific plugins:
 if has('nvim')
   Plug 'frankier/neovim-colors-solarized-truecolor-only'
-  Plug 'Shougo/deoplete.nvim'
 endif
 
 call plug#end()
@@ -98,16 +98,6 @@ if has('nvim')
   " Solarized color scheme
   colorscheme solarized
   let g:solarized_degrade=1
-
-  " Deoplete
-  let g:deoplete#enable_at_startup = 1
-  let g:deoplete#enable_smart_case = 1
-  let g:deoplete#enable_refresh_always = 1
-  call deoplete#custom#set('buffer', 'mark', 'buffer')
-  call deoplete#custom#set('omni', 'mark', 'omni')
-  call deoplete#custom#set('file', 'mark', 'file')
-  let g:deoplete#omni_patterns = {}
-  let g:deoplete#omni_patterns.html = ''
 endif
 
 " Indentline
