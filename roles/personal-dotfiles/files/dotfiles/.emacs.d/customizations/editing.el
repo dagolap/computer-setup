@@ -43,7 +43,6 @@
                                                "backups"))))
 (setq auto-save-default nil)
 
-
 ;; comments
 (defun toggle-comment-on-line ()
   "comment or uncomment current line"
@@ -68,17 +67,9 @@
 
 (setq electric-indent-mode nil)
 
-;; Use tab rotation indentation for haskell
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-
 ;; yay rainbows!
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-
-
-;; Dont compile SCSS on save
-(setq scss-compile-at-save nil)
-
 
 ;; Auto completion
 (add-hook 'after-init-hook 'global-company-mode)

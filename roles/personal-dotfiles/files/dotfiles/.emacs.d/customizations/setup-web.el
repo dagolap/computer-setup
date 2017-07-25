@@ -26,3 +26,7 @@
      (tagedit-add-paredit-like-keybindings)
      (add-hook 'web-mode-hook (lambda () (tagedit-mode 1)))))
 
+;; SCSS
+;; Dont compile SCSS on save
+(setq scss-compile-at-save nil)
+

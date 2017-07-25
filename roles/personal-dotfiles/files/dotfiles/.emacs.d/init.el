@@ -53,6 +53,7 @@
     erlang
     elixir-mode
     elixir-yasnippets
+    alchemist
     ;; Elm
     elm-mode
     ;; General data file formats
@@ -112,12 +113,11 @@
 ;; Hard-to-categorize customizations
 (load "misc.el")
 
-;; For editing lisps
-(load "elisp-editing.el")
-
 ;; Language-specific
 ;; (load "setup-clojure.el")
-(load "setup-js.el")
+(load "setup-lisps.el")
+(load "setup-web.el")
+(load "setup-haskell.el")
 
 ;; UTF-8 everything!
 (set-terminal-coding-system 'utf-8)
@@ -139,7 +139,7 @@
  '(coffee-tab-width 2)
  '(package-selected-packages
    (quote
-    (which-key yaml-mode tagedit scss-mode rainbow-delimiters projectile paredit neotree material-theme magit less-css-mode json-mode js2-mode haskell-mode erlang emmet-mode elm-mode elixir-yasnippets elixir-mode counsel company))))
+    (alchemist which-key yaml-mode tagedit scss-mode rainbow-delimiters projectile paredit neotree material-theme magit less-css-mode json-mode js2-mode haskell-mode erlang emmet-mode elm-mode elixir-yasnippets elixir-mode counsel company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
