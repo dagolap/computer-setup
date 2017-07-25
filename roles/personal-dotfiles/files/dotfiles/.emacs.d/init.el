@@ -5,9 +5,14 @@
 ;; Define package repositories
 (require 'package)
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
-                         ("melpa" . "https://stable.melpa.org/packages/")
-;;                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ("melpa" . "https://melpa.org/packages/")
+                         ("melpa-stable" . "https://stable.melpa.org/packages/")
+                         ;; ("marmalade" . "https://marmalade-repo.org/packages/")
 ))
+;; If a package exists in the repo with highest priority, use that.
+(setq package-archive-priorities '(("melpa" . 20)
+                                   ("melpa-stable" . 10)
+                                   ("gnu" . 0)))
 
 ;; packages are loaded before you start trying to modify them.
 ;; This also sets the load path.
