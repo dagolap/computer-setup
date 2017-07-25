@@ -126,6 +126,7 @@
 (load "setup-web.el")
 (load "setup-haskell.el")
 (load "setup-typescript.el")
+(load "setup-elixir.el")
 
 ;; UTF-8 everything!
 (set-terminal-coding-system 'utf-8)
