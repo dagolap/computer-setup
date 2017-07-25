@@ -41,6 +41,9 @@
     neotree                         ; File browser similar to nerdtree for vim
     magit                           ; Git integration (diffs, blame, modes for rebasing etc)
     material-theme                  ; Based on Googles Material Design
+    solarized-theme                 ; Solarized color theme
+    atom-one-dark-theme             ; One Dark Theme from Atom Editor
+    monokai-theme                   ; Monokai theme (Same as Sublime, TextMate etc.
     which-key                       ; Key completion helper
     flycheck                        ; Linter / Syntax checker for 40+ languages
     ;; HTML

@@ -21,7 +21,7 @@
 ;; Color Themes
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (add-to-list 'load-path "~/.emacs.d/themes")
-(load-theme 'material t)
+(load-theme 'monokai t)
 
 ;; increase font size for better readability
 (set-face-attribute 'default nil :height 120)
