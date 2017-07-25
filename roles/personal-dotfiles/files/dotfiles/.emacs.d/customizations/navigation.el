@@ -21,3 +21,18 @@
 ;; Shows a list of buffers
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
+;; Open neotree in projectile base folder
+(defun neotree-project-dir ()
+    "Open NeoTree using the project root."
+    (interactive)
+    (let ((project-dir (projectile-project-root))
+          (file-name (buffer-file-name)))
+      (neotree-toggle)
+      (if project-dir
+          (if (neo-global--window-exists-p)
+              (progn
+                (neotree-dir project-dir)
+                (neotree-find file-name)))
+        (message "Could not find project root."))))
+
+(global-set-key [f8] 'neotree-project-dir)
