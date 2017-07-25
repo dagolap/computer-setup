@@ -61,6 +61,8 @@
     alchemist
     ;; Elm
     elm-mode
+    ;; Typescript
+    tide
     ;; General data file formats
     json-mode
     yaml-mode
@@ -123,6 +125,7 @@
 (load "setup-lisps.el")
 (load "setup-web.el")
 (load "setup-haskell.el")
+(load "setup-typescript.el")
 
 ;; UTF-8 everything!
 (set-terminal-coding-system 'utf-8)
