@@ -26,3 +26,5 @@
       tags: [dev, elm]
     - role: dev-openjdk8
       tags: [dev, openjdk8]
+    - role: dev-typescript
+      tags: [dev, typescript]
