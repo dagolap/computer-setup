@@ -38,3 +38,6 @@
 
 ;; Which key helper
 (which-key-mode 1)
+
+;; Add magit status keybinding
+(global-set-key (kbd "C-x g") 'magit-status)
