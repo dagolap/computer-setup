@@ -1,0 +1,64 @@
+[global_config]
+  title_inactive_bg_color = "#373b41"
+  title_inactive_fg_color = "#c5c8c6"
+  title_transmit_bg_color = "#282a2e"
+  title_transmit_fg_color = "#c5c8c6"
+[keybindings]
+  broadcast_all = <Primary><Shift>a
+  broadcast_group = <Primary><Shift>g
+  broadcast_off = <Primary><Shift>o
+  close_term = None
+  close_window = None
+  edit_tab_title = None
+  edit_terminal_title = None
+  edit_window_title = None
+  go_down = <Primary><Shift>Down
+  go_left = <Primary><Shift>Left
+  go_right = <Primary><Shift>Right
+  go_up = <Primary><Shift>Up
+  group_all = None
+  group_tab = None
+  help = None
+  hide_window = None
+  insert_number = None
+  insert_padded = None
+  layout_launcher = None
+  move_tab_left = None
+  move_tab_right = None
+  new_tab = None
+  new_terminator = None
+  new_window = None
+  next_tab = None
+  prev_tab = None
+  resize_down = None
+  resize_left = None
+  resize_right = None
+  resize_up = None
+  rotate_ccw = None
+  rotate_cw = None
+  scaled_zoom = None
+  split_horiz = <Primary><Shift>h
+  toggle_scrollbar = None
+  toggle_zoom = None
+  ungroup_all = None
+  ungroup_tab = None
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#1d1f21"
+    cursor_color = "#c5c8c6"
+    font = SauceCodePro Nerd Font Medium 12
+    foreground_color = "#c5c8c6"
+    palette = "#282a2e:#a54242:#8c9440:#de935f:#5f819d:#85678f:#5e8d87:#707880:#373b41:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#c5c8c6"
+    scrollback_lines = 4000
+    scrollbar_position = hidden
+    use_system_font = False

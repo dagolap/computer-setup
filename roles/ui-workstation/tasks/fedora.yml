@@ -39,4 +39,5 @@
     - pygtksourceview # Required for source view plugin of Zim
     - remmina
     - thunderbird
+    - terminator
     - Zim
