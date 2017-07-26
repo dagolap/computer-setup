@@ -11,6 +11,9 @@
 ;; Go straight to scratch buffer on startup
 (setq inhibit-startup-message t)
 
+;; Ignore case when sorting
+(setq sort-fold-case t)
+
 ;; Enables projectile navigation mode
 ;;(setq projectile-require-project-root nil)
 (projectile-global-mode)
