@@ -43,7 +43,7 @@
     material-theme                  ; Based on Googles Material Design
     solarized-theme                 ; Solarized color theme
     atom-one-dark-theme             ; One Dark Theme from Atom Editor
-    monokai-theme                   ; Monokai theme (Same as Sublime, TextMate etc.
+    monokai-theme                   ; Monokai theme (Same as Sublime, TextMate etc.)
     which-key                       ; Key completion helper
     flycheck                        ; Linter / Syntax checker for 40+ languages
     ;; HTML
@@ -69,6 +69,7 @@
     ;; General data file formats
     json-mode
     yaml-mode
+    markdown-mode
     ;; Clojure
     ; clojure-mode                    ; keybindings and syntax highlighting
     ; clojure-mode-extra-font-locking ; extra syntax highlighting for clojure
