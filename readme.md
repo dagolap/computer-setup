@@ -2,17 +2,19 @@
 
 Repository to set up a new computer.
 
-## Installing a new workstation
 
-1. Check out this repository to a permanent location. (I suggest `~/.computer-setup`)
-2. Install ansible and git: `sudo dnf install ansible git`
-  - If on Fedora: Install python-dnf to control dnf package manager: `sudo dnf install python2-dnf`
-3. `cd ~/.computer-setup` or other relevant location.
+## Requirements
+* `git ansible`
+* Fedora: `python-dnf`
+* Ubuntu: `python-apt`
+
+## Installing a new workstation
+1. Check out this repository to a permanent location. (Suggested: `~/.computer-setup`)
+2. Make sure requirements as state above are installed
+3. `cd ~/.computer-setup` or wherever checkout is.
 4. Make sure variables set in the playbook is correct
 5. `ansible-playbook -i inventory playbook-localhost-workstation.yml --become --ask-become-pass`
 
 ## TODO
-
-* Split out stuff that doesnt require admin so it can be used on arbitrary machines. (E.g. only dotfiles and local binaries)
 * Java dev environment (Oracle java, IntelliJ, gradle, ++)
-* Configuration of GUI-stuff (desktops, keyboard shortcuts, themes, icons, etc.)
+* Some more configuration of GUI-stuff (desktops, keyboard shortcuts, etc.)
