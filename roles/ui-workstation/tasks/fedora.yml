@@ -33,11 +33,12 @@
     - libreoffice
     - libreoffice-langpack-nb
     - libreoffice-langpack-nn
+    - mpv
     - nautilus-dropbox
     - pidgin
     - pidgin-sipe # Required for Skype for business
     - pygtksourceview # Required for source view plugin of Zim
     - remmina
-    - thunderbird
     - terminator
+    - thunderbird
     - Zim
