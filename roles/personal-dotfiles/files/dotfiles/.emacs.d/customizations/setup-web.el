@@ -37,4 +37,9 @@
 (add-hook 'web-mode-hook #'rainbow-mode)
 (add-hook 'scss-mode-hook #'rainbow-mode)
 
+;; Add Emmet mode
+(add-hook 'sgml-mode-hook #'emmet-mode)
+(add-hook 'html-mode-hook #'emmet-mode)
+(add-hook 'web-mode-hook #'emmet-mode)
+
 
