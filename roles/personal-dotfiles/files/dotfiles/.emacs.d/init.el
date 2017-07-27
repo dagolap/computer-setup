@@ -46,6 +46,7 @@
     monokai-theme                   ; Monokai theme (Same as Sublime, TextMate etc.)
     which-key                       ; Key completion helper
     flycheck                        ; Linter / Syntax checker for 40+ languages
+    rainbow-mode                    ; Colorize color codes in buffers
     ;; HTML
     tagedit                         ; Manipulate tags like sexps
     emmet-mode                      ; Emmet / Zen-coding style
