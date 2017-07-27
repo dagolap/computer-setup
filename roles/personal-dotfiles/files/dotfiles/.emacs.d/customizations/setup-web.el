@@ -1,14 +1,14 @@
-;; javascript
+;; Javascript
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
 (add-hook 'js-mode-hook 'subword-mode)
 (add-hook 'html-mode-hook 'subword-mode)
 (setq js-indent-level 4)
-(eval-after-load "sgml-mode"
-  '(progn
-     (require 'tagedit)
-     (tagedit-add-paredit-like-keybindings)
-     (add-hook 'html-mode-hook (lambda () (tagedit-mode 1)))))
+
+;; Tagedit
+(tagedit-add-paredit-like-keybindings)
+(add-hook 'html-mode-hook #'tagedit-mode)
+(add-hook 'web-mode-hook #'tagedit-mode)
 
 ;; HTML
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
@@ -30,20 +30,14 @@
 ;; Dont compile SCSS on save
 (setq scss-compile-at-save nil)
 
-;; Add coloring of all html modes to scss some other modes as well
-(eval-after-load "rainbow-mode"
-  '(progn
-     (add-to-list 'rainbow-html-colors-major-mode-list 'scss-mode)
-     (add-to-list 'rainbow-html-colors-major-mode-list 'less-css-mode)
-     (add-to-list 'rainbow-html-colors-major-mode-list 'web-mode)
-     ))
-
+;; Show HTML colors in editor for various modes
+(require 'rainbow-mode)
+(add-to-list 'rainbow-html-colors-major-mode-list 'scss-mode)
+(add-to-list 'rainbow-html-colors-major-mode-list 'less-css-mode)
+(add-to-list 'rainbow-html-colors-major-mode-list 'web-mode)
 (add-hook 'web-mode-hook #'rainbow-mode)
 (add-hook 'scss-mode-hook #'rainbow-mode)
 
-;; Add Emmet mode
-(add-hook 'sgml-mode-hook #'emmet-mode)
+;; Setup emmet
 (add-hook 'html-mode-hook #'emmet-mode)
 (add-hook 'web-mode-hook #'emmet-mode)
-
-

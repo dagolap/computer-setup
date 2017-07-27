@@ -11,7 +11,7 @@
 (setq company-tooltip-align-annotations t)
 
 ;; Formats the buffer before saving
-(add-hook 'before-save-hook 'tide-format-before-save)
+(add-hook 'before-save-hook #'tide-format-before-save)
 
 ;; Initialize on typescript-mode
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
