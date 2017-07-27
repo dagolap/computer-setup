@@ -68,7 +68,6 @@
 (setq electric-indent-mode nil)
 
 ;; yay rainbows!
-(require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 ;; Auto completion

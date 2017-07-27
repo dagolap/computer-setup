@@ -31,9 +31,13 @@
 (setq scss-compile-at-save nil)
 
 ;; Add coloring of all html modes to scss some other modes as well
-(add-to-list 'rainbow-html-colors-major-mode-list 'scss-mode)
-(add-to-list 'rainbow-html-colors-major-mode-list 'less-css-mode)
-(add-to-list 'rainbow-html-colors-major-mode-list 'web-mode)
+(eval-after-load "rainbow-mode"
+  '(progn
+     (add-to-list 'rainbow-html-colors-major-mode-list 'scss-mode)
+     (add-to-list 'rainbow-html-colors-major-mode-list 'less-css-mode)
+     (add-to-list 'rainbow-html-colors-major-mode-list 'web-mode)
+     ))
+
 (add-hook 'web-mode-hook #'rainbow-mode)
 (add-hook 'scss-mode-hook #'rainbow-mode)
 
