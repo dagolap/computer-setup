@@ -1,4 +1,6 @@
 [global_config]
+  focus = mouse
+  inactive_color_offset = 0.604938271605
   title_inactive_bg_color = "#373b41"
   title_inactive_fg_color = "#c5c8c6"
   title_transmit_bg_color = "#282a2e"
