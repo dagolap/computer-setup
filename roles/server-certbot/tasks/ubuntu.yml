@@ -1,0 +1,15 @@
+- name: Install certbot ppa repository
+  apt_repository: repo='ppa:certbot/certbot' update_cache=yes
+
+- name: Install certbot
+  apt: name=python-certbot-nginx state=present
+
+# TODO: I should probably have some initial setup of domains etc. here.
+
+- name: Install certbot certificate renewal cronjob
+  cron:
+    name: Update letsencrypt certificates
+    minute: 15
+    hour: 2
+    job: 'certbot renew --pre-hook "service nginx stop" --post-hook "service nginx start" -q'
+
