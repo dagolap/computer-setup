@@ -1,33 +1,33 @@
 - hosts: localhost
   roles:
-    - role: utils-shell
-      tags: [utils, utils-shell]
-    - role: utils-neovim
-      tags: [utils, utils-neovim]
+    - role: personal-dotfiles
+      tags: [shell, ui, personal, dotfiles]
+    - role: shell-basics
+      tags: [shell, shell-basics]
+    - role: devtools-neovim
+      tags: [shell, devtools, neovim]
     - role: utils-docker
-      tags: [utils, utils-docker]
+      tags: [utils, docker]
     - role: service-portainer
-      tags: [northrend, service-portainer]
+      tags: [northrend, portainer]
     - role: dev-python
-      tags: [dev, dev-python]
+      tags: [dev, python]
     - role: dev-javascript
-      tags: [dev, dev-javascript]
+      tags: [dev, javascript]
     - role: dev-elixir
-      tags: [dev, dev-elixir]
-    - role: utils-server
-      tags: [utils, utils-server]
+      tags: [dev, elixir]
+    - role: server-basics
+      tags: [server, northrend]
     - role: server-nginx
-      tags: [server, server-nginx]
+      tags: [server, nginx, northrend]
     - role: server-certbot
-      tags: [server, server-certbot]
+      tags: [server, certbot, northrend]
     - role: server-mariadb
-      tags: [server, server-mariadb]
+      tags: [server, mariadb, northrend]
     - role: server-php
-      tags: [server, server-php]
-    - role: northrend-div
-      tags: [northrend, northrend-div]
+      tags: [server, php, northrend]
     - role: dev-openjdk8
-      tags: [dev, dev-openjdk8]
-    - role: service-sbsk-tools
-      tags: [northrend, service-sbsk-tools]
+      tags: [dev, openjdk8]
+#    - role: service-sbsk-tools
+#      tags: [northrend, service-sbsk-tools]
 
