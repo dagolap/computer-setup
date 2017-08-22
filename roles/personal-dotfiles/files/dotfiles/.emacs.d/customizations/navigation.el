@@ -39,8 +39,8 @@
 
 ;; Keybindings for ace-window
 (require 'ace-window)
-(global-set-key (kbd "M-p") 'ace-window)
+(global-set-key (kbd "C-æ") 'ace-window)
 
 (require 'avy)
-(global-set-key (kbd "C-.") 'avy-goto-word-or-subword-1)
+(global-set-key (kbd "C-ø") 'avy-goto-word-or-subword-1)
 
