@@ -47,6 +47,8 @@
     which-key                       ; Key completion helper
     flycheck                        ; Linter / Syntax checker for 40+ languages
     rainbow-mode                    ; Colorize color codes in buffers
+    ace-window                      ; Jump between windows
+    avy                             ; Jump in files
     ;; HTML
     tagedit                         ; Manipulate tags like sexps
     emmet-mode                      ; Emmet / Zen-coding style
@@ -153,7 +155,7 @@
  '(coffee-tab-width 2)
  '(package-selected-packages
    (quote
-    (alchemist which-key yaml-mode tagedit scss-mode rainbow-delimiters projectile paredit neotree material-theme magit less-css-mode json-mode js2-mode haskell-mode erlang emmet-mode elm-mode elixir-yasnippets elixir-mode counsel company))))
+    (ace-window avy alchemist which-key yaml-mode tagedit scss-mode rainbow-delimiters projectile paredit neotree material-theme magit less-css-mode json-mode js2-mode haskell-mode erlang emmet-mode elm-mode elixir-yasnippets elixir-mode counsel company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

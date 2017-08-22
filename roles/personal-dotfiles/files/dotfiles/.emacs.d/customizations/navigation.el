@@ -36,3 +36,11 @@
         (message "Could not find project root."))))
 
 (global-set-key [f8] 'neotree-project-dir)
+
+;; Keybindings for ace-window
+(require 'ace-window)
+(global-set-key (kbd "M-p") 'ace-window)
+
+(require 'avy)
+(global-set-key (kbd "C-.") 'avy-goto-word-or-subword-1)
+
