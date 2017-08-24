@@ -71,6 +71,8 @@
     tide
     ;; Golang
     go-mode
+    flymake-go
+    company-go
     ;; General data file formats
     json-mode
     yaml-mode
@@ -136,6 +138,7 @@
 (load "setup-haskell.el")
 (load "setup-typescript.el")
 (load "setup-elixir.el")
+(load "setup-golang.el")
 
 ;; UTF-8 everything!
 (set-terminal-coding-system 'utf-8)
@@ -157,7 +160,7 @@
  '(coffee-tab-width 2)
  '(package-selected-packages
    (quote
-    (go-mode ace-window avy alchemist which-key yaml-mode tagedit scss-mode rainbow-delimiters projectile paredit neotree material-theme magit less-css-mode json-mode js2-mode haskell-mode erlang emmet-mode elm-mode elixir-yasnippets elixir-mode counsel company))))
+    (company-go flymake-go go-mode ace-window avy alchemist which-key yaml-mode tagedit scss-mode rainbow-delimiters projectile paredit neotree material-theme magit less-css-mode json-mode js2-mode haskell-mode erlang emmet-mode elm-mode elixir-yasnippets elixir-mode counsel company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
