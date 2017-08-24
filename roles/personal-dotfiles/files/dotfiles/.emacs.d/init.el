@@ -69,6 +69,8 @@
     elm-mode
     ;; Typescript
     tide
+    ;; Golang
+    go-mode
     ;; General data file formats
     json-mode
     yaml-mode
@@ -155,7 +157,7 @@
  '(coffee-tab-width 2)
  '(package-selected-packages
    (quote
-    (ace-window avy alchemist which-key yaml-mode tagedit scss-mode rainbow-delimiters projectile paredit neotree material-theme magit less-css-mode json-mode js2-mode haskell-mode erlang emmet-mode elm-mode elixir-yasnippets elixir-mode counsel company))))
+    (go-mode ace-window avy alchemist which-key yaml-mode tagedit scss-mode rainbow-delimiters projectile paredit neotree material-theme magit less-css-mode json-mode js2-mode haskell-mode erlang emmet-mode elm-mode elixir-yasnippets elixir-mode counsel company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

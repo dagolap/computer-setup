@@ -1,0 +1,4 @@
+- name: Install golang
+  apt: pkg=golang state=present
+
+- include: common.yml

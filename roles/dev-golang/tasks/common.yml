@@ -1,0 +1,16 @@
+
+- name: Install golang tools
+  become_user: "{{ user }}"
+  command: go get golang.org/x/tools/cmd/...
+
+- name: Install golang godef (allows jumping in code)
+  become_user: "{{ user }}"
+  command: go get github.com/rogpeppe/godef
+
+- name: Install golang gocode (allows autocomplete)
+  become_user: "{{ user }}"
+  command: go get github.com/nsf/gocode
+
+- name: Install golang golint
+  become_user: "{{ user }}"
+  command: go get gihub.com/golang/lint/golint
