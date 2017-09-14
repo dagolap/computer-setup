@@ -44,3 +44,7 @@
 (require 'avy)
 (global-set-key (kbd "C-ø") 'avy-goto-word-or-subword-1)
 
+;; Set fuzzy matching as default pattern matching mechanism in ivy.
+(setq ivy-re-builders-alist
+      '((t . ivy--regex-plus)))
+;; (setq ivy-initial-inputs-alist nil)
