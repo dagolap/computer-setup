@@ -2,7 +2,7 @@
   yum_repository:
     name: neovim
     description: Neovim repository - owned by dperson
-    baseurl: https://copr-be.cloud.fedoraproject.org/results/dperson/neovim/fedora-$releasever-$basearch/
+    baseurl: https://copr-be.cloud.fedoraproject.org/results/dperson/neovim/fedora-26-$basearch/
     gpgkey: https://copr-be.cloud.fedoraproject.org/results/dperson/neovim/pubkey.gpg
     skip_if_unavailable: yes
     gpgcheck: yes

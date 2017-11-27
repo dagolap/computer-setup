@@ -2,7 +2,7 @@
   yum_repository:
     name: dropbox
     description: Dropbox Repository
-    baseurl: http://linux.dropbox.com/fedora/25/
+    baseurl: http://linux.dropbox.com/fedora/26/
     gpgkey: https://linux.dropbox.com/fedora/rpm-public-key.asc
 
 - name: Add Google Chrome repository (yum)
