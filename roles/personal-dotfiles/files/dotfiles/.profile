@@ -1,7 +1,7 @@
 # Java
-export JAVA_HOME='/usr/lib/jvm/java-1.8.0/'
-export GRADLE_HOME='/opt/gradle/gradle-3.5/'
-export PATH="$HOME/bin:/opt/gradle/gradle-3.5/bin:$PATH"
+export JAVA_HOME='/usr/lib/jvm/java-1.8.0-openjdk/'
+export GRADLE_HOME='/home/dagolap/bin/apps/gradle-4.3.1/'
+export PATH="$HOME/bin:/home/dagolap/bin/apps/gradle-4.3.1/bin/:$PATH"
 
 # Golang
 export GOPATH="$HOME/dev/go"
