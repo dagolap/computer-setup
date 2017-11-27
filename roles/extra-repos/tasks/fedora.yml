@@ -1,0 +1,15 @@
+- name: Check if rpmfusion free exists
+  stat: path=/etc/yum.repos.d/rpmfusion-free.repo
+  register: rpmfusion_free
+
+- name: install rpmfusion free if required
+  yum: name=http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm
+  when: rpmfusion_free.stat.exists == False
+
+- name: Check if rpmfusion nonfree exists
+  stat: path=/etc/yum.repos.d/rpmfusion-nonfree.repo
+  register: rpmfusion_nonfree
+
+- name: install rpmfusion free if required
+  yum: name=http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm
+  when: rpmfusion_nonfree.stat.exists == False

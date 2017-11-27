@@ -1,5 +1,7 @@
 - hosts: localhost
   roles:
+    - role: extra-repos
+      tags: [extras, repos]
     - role: personal-dotfiles
       tags: [shell, ui, personal, dotfiles]
     - role: shell-basics
