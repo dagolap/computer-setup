@@ -25,7 +25,6 @@
 - name: Install useful GUI utilities
   dnf: name={{ item }} state=present
   with_items:
-    - alacarte
     - albert
     - firefox
     - google-chrome-unstable
@@ -33,6 +32,7 @@
     - libreoffice
     - libreoffice-langpack-nb
     - libreoffice-langpack-nn
+    - menulibre
     - mpv
     - nautilus-dropbox
     - pidgin
