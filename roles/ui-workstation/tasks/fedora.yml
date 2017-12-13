@@ -38,7 +38,9 @@
     - pidgin
     - pidgin-sipe # Required for Skype for business
     - pygtksourceview # Required for source view plugin of Zim
+    - python2-inotify # Required for file watches in syncthing-gtk
     - remmina
+    - syncthing-gtk
     - terminator
     - thunderbird
     - youtube-dl # Required by mpv to play directly from youtube urls
