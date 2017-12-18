@@ -1,10 +1,3 @@
-- name: Add Dropbox repository (yum)
-  yum_repository:
-    name: dropbox
-    description: Dropbox Repository
-    baseurl: http://linux.dropbox.com/fedora/26/
-    gpgkey: https://linux.dropbox.com/fedora/rpm-public-key.asc
-
 - name: Add Google Chrome repository (yum)
   yum_repository:
     name: google-chrome
@@ -34,7 +27,6 @@
     - libreoffice-langpack-nn
     - menulibre
     - mpv
-    - nautilus-dropbox
     - pidgin
     - pidgin-sipe # Required for Skype for business
     - pygtksourceview # Required for source view plugin of Zim
