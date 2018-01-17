@@ -36,4 +36,5 @@
     - terminator
     - thunderbird
     - youtube-dl # Required by mpv to play directly from youtube urls
+    - zeal
     - Zim
