@@ -4,7 +4,7 @@
     "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
 
     // Controls the font size.
-    "editor.fontSize": 16,
+    "editor.fontSize": 18,
 
     // Turn on ligatures.
     "editor.fontLigatures": true,
