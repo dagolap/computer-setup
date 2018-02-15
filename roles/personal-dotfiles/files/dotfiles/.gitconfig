@@ -7,3 +7,5 @@
     demolog = !"git log --reverse --since='14 days' --format=format:'%C(cyan) %ad %C(yellow)%h %Creset %s %Cgreen%d' --date=local"
 [push]
 	default = simple
+[rebase]
+	autosquash = true
