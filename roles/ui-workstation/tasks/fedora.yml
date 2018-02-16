@@ -21,6 +21,7 @@
     - albert
     - firefox
     - google-chrome-unstable
+    - gvfs-smb # Allows navigating to samba shares from Thunar
     - keepassxc
     - libreoffice
     - libreoffice-langpack-nb
