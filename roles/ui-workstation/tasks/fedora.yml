@@ -1,3 +1,11 @@
+- name: Add rofi repository (yum)
+  yum_repository:
+    name: yaroslav-i3desktop
+    description: Repository for rofi - owned by Yaroslav
+    baseurl: https://copr-be.cloud.fedoraproject.org/results/yaroslav/i3desktop/fedora-$releasever-$basearch/
+    gpgkey: https://copr-be.cloud.fedoraproject.org/results/yaroslav/i3desktop/pubkey.gpg
+    gpgcheck: yes
+
 - name: Add Google Chrome repository (yum)
   yum_repository:
     name: google-chrome
@@ -33,6 +41,7 @@
     - pygtksourceview # Required for source view plugin of Zim
     - python2-inotify # Required for file watches in syncthing-gtk
     - remmina
+    - rofi
     - syncthing-gtk
     - terminator
     - thunderbird
