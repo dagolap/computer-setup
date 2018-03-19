@@ -6,6 +6,7 @@
     - ~/.config/
     - ~/.config/Code/
     - ~/.config/fontconfig/conf.d/
+    - ~/.config/rofi/
     - ~/.config/terminator/
     - ~/.local/share/applications/
   become_user: "{{ user }}"
@@ -17,9 +18,10 @@
     state: link
     force: yes
   with_items:
-    - .config/Code/User
     - .config/albert.conf
+    - .config/Code/User
     - .config/fontconfig/conf.d/50-no-embedded.conf # ensures embedded bitmaps are not used for fonts. Fixes ligature bugs in calibri etc.
+    - .config/rofi/config
     - .config/terminator/config
     - .emacs.d
     - .gitconfig
