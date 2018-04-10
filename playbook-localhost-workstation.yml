@@ -10,6 +10,8 @@
       tags: [ui, ui-basics]
     - role: ui-workstation
       tags: [ui, workstation]
+    - role: ui-mediaproduction
+      tags: [ui, mediaproduction]
     - role: devtools-vscode
       tags: [ui, devtools, vscode]
     - role: devtools-neovim
