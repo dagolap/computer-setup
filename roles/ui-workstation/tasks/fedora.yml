@@ -14,19 +14,9 @@
     gpgkey: https://dl.google.com/linux/linux_signing_key.pub
     gpgcheck: yes
 
-- name: Add Albert repository (yum)
-  yum_repository:
-    name: copr-rabiny-albert
-    description: Repository for Albert - owned by Rabiny
-    baseurl: https://copr-be.cloud.fedoraproject.org/results/rabiny/albert/fedora-$releasever-$basearch/
-    gpgkey: https://copr-be.cloud.fedoraproject.org/results/rabiny/albert/pubkey.gpg
-    skip_if_unavailable: yes
-    gpgcheck: yes
-
 - name: Install useful GUI utilities
   dnf: name={{ item }} state=present
   with_items:
-    - albert
     - firefox
     - google-chrome-unstable
     - gvfs-smb # Allows navigating to samba shares from Thunar
