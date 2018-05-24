@@ -8,3 +8,9 @@
 
 - name: Install nodejs tools
   dnf: name=nodejs state=present
+
+- name: Create user global NPM folder
+  file:
+    path: ~/.npm-packages/
+    state: directory
+  become_user: "{{ user }}"
