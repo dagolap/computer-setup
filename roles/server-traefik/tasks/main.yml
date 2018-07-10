@@ -10,7 +10,7 @@
 - name: Copy traefik configuration files
   become: yes
   template:
-    src: {{ item }}
+    src: "{{ item }}""
     dest: /opt/traefik/{{ item }}
     owner: root
     group: root
