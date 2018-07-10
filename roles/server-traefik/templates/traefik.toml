@@ -1,0 +1,37 @@
+debug = false
+
+legLevel = "DEBUG"
+defaultEntryPoints = ["https", "http"]
+
+[entryPoints]
+  [entryPoints.http]
+  address = ":80"
+    [entryPoints.http.redirect]
+    entryPoint = "https"
+
+  [entryPoints.https]
+  address = ":443"
+  [entryPoints.https.tls]
+
+  [entryPoints.dashboard]
+  address = ":444"
+
+[api]
+entryPoint = "dashboard"
+dashboard = true
+
+[retry]
+
+[docker]
+endpoint = "unix:///var/run/docker.sock"
+domain = "tyria.bitnexus.org"
+watch = true
+exposedByDefault = false
+
+[acme]
+email = "dagolav@prestegarden.com"
+storage = "acme.json"
+entryPoint = "https"
+onHostRule = true
+[acme.httpChallenge]
+entryPoint = "http"

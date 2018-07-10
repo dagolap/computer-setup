@@ -16,4 +16,6 @@
       tags: [dev, elixir]
     - role: server-basics
       tags: [server, northrend]
+    - role: server-traefik
+      tags: [traefik]
 

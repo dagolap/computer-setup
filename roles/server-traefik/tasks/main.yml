@@ -1,0 +1,40 @@
+- name: Create folder to store traefik configuration
+  become: yes
+  file:
+    path: /opt/traefik/
+    state: directory
+    owner: root
+    group: root
+    mode: 0700
+
+- name: Copy traefik configuration files
+  become: yes
+  template:
+    src: {{ item }}
+    dest: /opt/traefik/{{ item }}
+    owner: root
+    group: root
+    mode: 0600
+  with_items:
+    - docker-compose.yml
+    - traefik.toml
+
+- name: Ensure acme storage file exists
+  become: yes
+  file:
+    path: /opt/traefik/acme.json
+    state: touch
+    owner: root
+    group: root
+    mode: 0600
+
+- name: Ensure the server is a swarm manager
+  become: yes
+  command: docker swarm init --advertise-addr 127.0.0.1
+  ignore_errors: yes
+
+- name: Redeploy traefik container - will pull and restart if necessary
+  become: yes
+  command: docker stack deploy --prune -c /opt/traefik/docker-compose.yml traefik
+  args:
+    chdir: /var/opt/minit/config/
