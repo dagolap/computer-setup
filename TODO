@@ -1,0 +1,3 @@
+SNAP
+ - install snapd as base role
+ - role for some nice desktop snap apps such as spotify
