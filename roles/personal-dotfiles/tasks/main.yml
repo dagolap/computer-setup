@@ -22,6 +22,7 @@
     - .config/Code/User
     - .config/fontconfig/conf.d/50-no-embedded.conf # ensures embedded bitmaps are not used for fonts. Fixes ligature bugs in calibri etc.
     - .config/rofi/config
+    - .config/rofi/theme-dag.rasi
     - .config/terminator/config
     - .emacs.d
     - .gitconfig

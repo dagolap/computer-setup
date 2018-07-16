@@ -7,13 +7,13 @@
     "editor.fontSize": 18,
 
     // Turn on ligatures.
-    "editor.fontLigatures": true,
+    "editor.fontLigatures": false,
     "workbench.activityBar.visible": true,
     "workbench.sideBar.location": "left",
     "window.zoomLevel": 0,
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
-    "workbench.iconTheme": "vs-seti",
+    "workbench.iconTheme": "vscode-icons",
 
     // Minimap
     "editor.minimap.enabled": true,
@@ -21,5 +21,6 @@
 
     // Drag and drop text
     "editor.dragAndDrop": true,
-    "workbench.colorTheme": "One Dark Pro"
+    "workbench.colorTheme": "One Dark Pro",
+    "vsicons.dontShowNewVersionMessage": true
 }
