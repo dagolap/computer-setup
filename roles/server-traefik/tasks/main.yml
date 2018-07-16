@@ -10,7 +10,7 @@
 - name: Copy traefik configuration files
   become: yes
   template:
-    src: "{{ item }}""
+    src: "{{ item }}"
     dest: /opt/traefik/{{ item }}
     owner: root
     group: root
@@ -33,8 +33,13 @@
   command: docker swarm init --advertise-addr 127.0.0.1
   ignore_errors: yes
 
+- name: Ensure traefik external network is created
+  become: yes
+  command: docker network create traefik-external --scope swarm
+  ignore_errors: yes
+
 - name: Redeploy traefik container - will pull and restart if necessary
   become: yes
   command: docker stack deploy --prune -c /opt/traefik/docker-compose.yml traefik
   args:
-    chdir: /var/opt/minit/config/
+    chdir: /opt/traefik
