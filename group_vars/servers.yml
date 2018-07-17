@@ -1,0 +1,2 @@
+user: "dagolap"
+user_home: "/home/{{user}}"

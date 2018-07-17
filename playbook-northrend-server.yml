@@ -1,11 +1,5 @@
-- hosts: localhost
+- hosts: northrend.bitnexus.net
   roles:
-    - role: personal-dotfiles
-      tags: [shell, ui, personal, dotfiles]
-    - role: shell-basics
-      tags: [shell, shell-basics]
-    - role: devtools-neovim
-      tags: [shell, devtools, neovim]
     - role: utils-docker
       tags: [utils, docker]
     - role: service-portainer
@@ -14,8 +8,6 @@
       tags: [dev, python]
     - role: dev-javascript
       tags: [dev, javascript]
-    - role: dev-elixir
-      tags: [dev, elixir]
     - role: server-basics
       tags: [server, northrend]
     - role: server-nginx

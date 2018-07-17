@@ -1,0 +1,24 @@
+version: '3'
+services:
+  web:
+    image: gitea/gitea:1.3.2
+    restart: always
+    volumes:
+      - /opt/gitea/data:/data
+    networks:
+      - traefik-external
+    depends_on:
+      - db
+    environment:
+      - USER_UID=0
+      - USER_GID=0
+    labels:
+      - "traefik.backend=gitea-backend"
+      - "traefik.docker.network=traefik-external"
+      - "traefik.frontend.rule=Host:gitea.bitnexus.net"
+      - "traefik.enable=true"
+      - "traefik.port=3000"
+
+networks:
+  traefik-external:
+    external: true

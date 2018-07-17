@@ -1,3 +1,6 @@
 [local]
 localhost           ansible_connection=local
 
+[servers]
+tyria.bitnexus.net
+northrend.bitnexus.net

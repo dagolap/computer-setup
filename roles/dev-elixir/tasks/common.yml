@@ -1,5 +1,5 @@
 - name: Install/update hex
-  shell: mix local.hex
+  shell: mix local.hex --force
   become_user: "{{ user }}"
 
 - name: Check if phoenix is already installed
