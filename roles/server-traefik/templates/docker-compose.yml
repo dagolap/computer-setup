@@ -5,9 +5,9 @@ services:
     image: traefik:1.7
     restart: always
     ports:
-      - 80:80
-      - 443:443
-      - 127.0.0.1:11000:11000
+      - "80:80"
+      - "443:443"
+      - "127.0.0.1:11000:11000"
     networks:
       - traefik-external
     volumes:
