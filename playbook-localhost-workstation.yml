@@ -1,38 +1,82 @@
 - hosts: localhost
+  vars_prompt:
+    - name: run_basics
+      prompt: Deploy basics? (repos, dotfiles, shell-tools) [Y/n]
+      default: Y
+      private: no
+    - name: run_gui
+      prompt: Deploy GUI basics? (ui basics and ui workstation) [Y/n]
+      default: Y
+      private: no
+    - name: run_mediaproduction
+      prompt: Deploy media production tools? (video-, audio- 3D-editors etc) [y/N]
+      default: N
+      private: no
+    - name: run_devtools
+      prompt: Deploy devtools? (vim, emacs, vscode etc) [Y/n]
+      default: Y
+      private: no
+    - name: run_utils
+      prompt: Deploy utils? (docker, virtualization etc) [Y/n]
+      default: Y
+      private: no
+    - name: run_languages
+      prompt: Deploy programming languages? (js, elixir, java, typescript etc) [Y/n]
+      default: Y
+      private: no
+      
   roles:
     - role: extra-repos
       tags: [extras, repos]
+      when: run_basics == "Y" or run_basics == "y"
     - role: personal-dotfiles
       tags: [shell, ui, personal, dotfiles]
+      when: run_basics == "Y" or run_basics == "y"
     - role: shell-basics
       tags: [shell, shell-basics]
+      when: run_basics == "Y" or run_basics == "y"
     - role: ui-basics
       tags: [ui, ui-basics]
+      when: run_gui == "Y" or run_gui == "y"
     - role: ui-workstation
       tags: [ui, workstation]
+      when: run_gui == "Y" or run_gui == "y"
     - role: ui-mediaproduction
       tags: [ui, mediaproduction]
+      when: run_mediaproduction == "Y" or run_mediaproduction == "y"
     - role: devtools-vscode
       tags: [ui, devtools, vscode]
+      when: run_devtools == "Y" or run_devtools == "y"
     - role: devtools-neovim
       tags: [shell, devtools, neovim]
+      when: run_devtools == "Y" or run_devtools == "y"
     - role: devtools-emacs
       tags: [shell, devtools, emacs]
+      when: run_devtools == "Y" or run_devtools == "y"
     - role: devtools-sublime
       tags: [ui, devtools, sublime]
+      when: run_devtools == "Y" or run_devtools == "y"
     - role: utils-docker
       tags: [utils, docker]
+      when: run_utils == "Y" or run_utils == "y"
     - role: utils-virtualization
       tags: [utils, virtualization]
+      when: run_utils == "Y" or run_utils == "y"
     - role: dev-javascript
       tags: [dev, javascript]
+      when: run_languages == "Y" or run_languages == "y"
     - role: dev-elixir
       tags: [dev, elixir]
+      when: run_languages == "Y" or run_languages == "y"
 #    - role: dev-elm
 #      tags: [dev, elm]
+#      when: run_languages == "Y" or run_languages == "y"
     - role: dev-openjdk8
       tags: [dev, openjdk8]
+      when: run_languages == "Y" or run_languages == "y"
     - role: dev-typescript
       tags: [dev, typescript]
-    - role: dev-golang
-      tags: [dev, golang]
+      when: run_languages == "Y" or run_languages == "y"
+#    - role: dev-golang
+#      tags: [dev, golang]
+#      when: run_languages == "Y" or run_languages == "y"
