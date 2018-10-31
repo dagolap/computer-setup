@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    image: gitea/gitea:1.3.2
+    image: gitea/gitea:1.5.1
     restart: always
     volumes:
       - /opt/gitea/data:/data
