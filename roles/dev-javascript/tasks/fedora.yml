@@ -2,7 +2,7 @@
   yum_repository:
     name: nodesource
     description: Nodesource Repository
-    baseurl: https://rpm.nodesource.com/pub_8.x/fc/$releasever/$basearch
+    baseurl: https://rpm.nodesource.com/pub_10.x/fc/$releasever/$basearch
     gpgkey: https://rpm.nodesource.com/pub/el/NODESOURCE-GPG-SIGNING-KEY-EL
     gpgcheck: yes
 
