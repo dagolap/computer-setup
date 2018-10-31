@@ -1,17 +1,18 @@
 - name: Install basic shell utilities (Ubuntu)
-  apt: name={{ item }} state=present
-  with_items:
-    - curl
-    - emacs
-    - git
-    - htop
-    - inotify-tools
-    - jq
-    - mosh
-    - progress
-    - silversearcher-ag
-    - tmux
-    - vim
-    - zsh
+  apt:
+    state: present
+    name:
+      - curl
+      - emacs
+      - git
+      - htop
+      - inotify-tools
+      - jq
+      - mosh
+      - progress
+      - silversearcher-ag
+      - tmux
+      - vim
+      - zsh
 
 - include: common.yml

@@ -8,8 +8,6 @@
   apt_repository: repo='ppa:neovim-ppa/stable'
 
 - name: Install neovim (Ubuntu)
-  apt: name={{ item }} state=present
-  with_items:
-    - neovim
+  apt: name=neovim state=present
 
 - include: common.yml

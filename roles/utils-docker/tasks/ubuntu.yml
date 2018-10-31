@@ -1,10 +1,11 @@
 - name: Install prerequisites
-  apt: name={{ item }} state=present
-  with_items:
-    - apt-transport-https
-    - ca-certificates
-    - curl
-    - software-properties-common
+  apt:
+    state: present
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
 
 - name: Add docker apt key
   apt_key: data="{{ lookup('file', 'docker-release-tool.asc') }}" state=present
