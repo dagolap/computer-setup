@@ -80,3 +80,6 @@
 #    - role: dev-golang
 #      tags: [dev, golang]
 #      when: run_languages == "Y" or run_languages == "y"
+    - role: dev-haskell
+      tags: [dev, haskell]
+      when: run_languages == "Y" or run_languages == "y"
