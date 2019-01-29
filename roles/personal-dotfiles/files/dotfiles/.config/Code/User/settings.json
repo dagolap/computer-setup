@@ -22,5 +22,6 @@
     // Drag and drop text
     "editor.dragAndDrop": true,
     "workbench.colorTheme": "One Dark Pro",
-    "vsicons.dontShowNewVersionMessage": true
+    "vsicons.dontShowNewVersionMessage": true,
+    "window.titleBarStyle": "native"
 }
