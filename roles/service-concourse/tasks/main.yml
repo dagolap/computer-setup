@@ -1,0 +1,26 @@
+- name: Create folder to store concourse configuration
+  become: yes
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: root
+    group: root
+    mode: 0700
+  with_items:
+    - /opt/concourse/
+    - /opt/concourse/data/
+
+- name: Copy concourse configuration files
+  become: yes
+  template:
+    src: docker-compose.yml
+    dest: /opt/concourse/docker-compose.yml
+    owner: root
+    group: root
+    mode: 0600
+
+- name: Redeploy concourse container - will pull and restart if necessary
+  become: yes
+  command: docker-compose up -d
+  args:
+    chdir: /opt/concourse

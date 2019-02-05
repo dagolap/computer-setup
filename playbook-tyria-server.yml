@@ -12,3 +12,5 @@
       tags: [traefik]
     - role: service-gitea
       tags: [gitea]
+    - role: service-concourse
+      tags: [concourse]

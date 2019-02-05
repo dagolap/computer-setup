@@ -35,3 +35,16 @@ entryPoint = "https"
 onHostRule = true
 [acme.httpChallenge]
 entryPoint = "http"
+
+[file]
+[backends]
+  [backends.concourse]
+    [backends.concourse.servers.concourse]
+       url = "http://127.0.0.1:8080"
+
+[frontends]
+  [frontends.concourse]
+      backend = "concourse"
+      passHostHeader = true
+      [frontends.concourse.routes.example]
+          rule = "Host:concourse.bitnexus.net"
