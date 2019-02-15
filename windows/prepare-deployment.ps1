@@ -6,3 +6,6 @@ winrm quickconfig
 
 # Install Chocolatey DSC Module
 Install-Module -Name cChoco -Force
+
+# Increase max envelope size
+Set-Item -Path WSMan:\localhost\MaxEnvelopeSizeKb -Value 2048

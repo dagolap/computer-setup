@@ -73,7 +73,6 @@
             Name = @(
                 "sysinternals"
                 "ccleaner"
-                "geforce-experience"
 
             )
             DependsOn = "[cChocoInstaller]installChoco"
