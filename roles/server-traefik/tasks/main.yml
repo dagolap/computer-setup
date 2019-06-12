@@ -33,12 +33,6 @@
     name: traefik-external
     internal: no
 
-- name: Ensure traefik internal network exists
-  become: yes
-  docker_network:
-    name: traefik-internal
-    internal: yes
-
 - name: Deploy traefik container
   become: yes
   docker_compose:
