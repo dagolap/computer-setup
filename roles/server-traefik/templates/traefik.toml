@@ -14,7 +14,7 @@ defaultEntryPoints = ["https", "http"]
   [entryPoints.https.tls]
 
   [entryPoints.dashboard]
-  address = ":444"
+  address = ":11000"
 
 [api]
 entryPoint = "dashboard"

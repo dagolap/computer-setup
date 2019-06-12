@@ -10,17 +10,32 @@
     - /opt/gitea/
     - /opt/gitea/data/
 
-- name: Copy gitea configuration files
+- name: Deploy gitea
   become: yes
-  template:
-    src: docker-compose.yml
-    dest: /opt/gitea/docker-compose.yml
-    owner: root
-    group: root
-    mode: 0600
+  docker_compose:
+    project_name: gitea
+    definition:
+      version: "2"
+      services:
+        web:
+          image: gitea/gitea:1.5.1
+          restart: always
+          volumes:
+            - /opt/gitea/data:/data
+          networks:
+            - traefik-external
+          ports:
+            - "22000:22000"
+          environment:
+            - USER_UID=0
+            - USER_GID=0
+          labels:
+            - "traefik.backend=gitea-backend"
+            - "traefik.docker.network=traefik-internal"
+            - "traefik.frontend.rule=Host:gitea.bitnexus.net"
+            - "traefik.enable=true"
+            - "traefik.port=3000"
+      networks:
+        traefik-external:
+          external: yes
 
-- name: Redeploy gitea container - will pull and restart if necessary
-  become: yes
-  command: docker stack deploy --prune -c /opt/gitea/docker-compose.yml gitea
-  args:
-    chdir: /opt/gitea
