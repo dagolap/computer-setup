@@ -1,10 +1,25 @@
+- name: Create git group
+  become: yes
+  group:
+    name: git
+    gid: 10001
+    state: present
+
+- name: Create git user
+  become: yes
+  user:
+    name: git
+    comment: Gitea Git
+    uid: 10001
+    group: git
+
 - name: Create folder to store gitea configuration
   become: yes
   file:
     path: "{{ item }}"
     state: directory
-    owner: root
-    group: root
+    owner: git
+    group: git
     mode: 0700
   with_items:
     - /opt/gitea/
@@ -18,7 +33,7 @@
       version: "2"
       services:
         web:
-          image: gitea/gitea:1.5.1
+          image: gitea/gitea:1.8.2
           restart: always
           volumes:
             - /opt/gitea/data:/data
@@ -27,8 +42,8 @@
           ports:
             - "22000:22000"
           environment:
-            - USER_UID=0
-            - USER_GID=0
+            - USER_UID=10001
+            - USER_GID=10001
           labels:
             - "traefik.backend=gitea-backend"
             - "traefik.docker.network=traefik-internal"
