@@ -1,0 +1,9 @@
+- name: Install prerequisites
+  apt:
+    state: present
+    name:
+      - apt-transport-https # Allows using https in repos
+      - ca-certificates
+      - curl
+      - software-properties-common
+      - snapd # Required for VSCode and probably lots of other stuff we want as well

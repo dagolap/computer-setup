@@ -1,0 +1,26 @@
+- name: Create folder to store drone configuration
+  become: yes
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: root
+    group: root
+    mode: 0700
+  with_items:
+    - /opt/drone/
+    - /opt/drone/data/
+
+- name: Copy drone configuration files
+  become: yes
+  template:
+    src: docker-compose.yml
+    dest: /opt/drone/docker-compose.yml
+    owner: root
+    group: root
+    mode: 0600
+
+- name: Redeploy drone container - will pull and restart if necessary
+  become: yes
+  command: docker stack deploy --prune -c /opt/drone/docker-compose.yml drone
+  args:
+    chdir: /opt/drone

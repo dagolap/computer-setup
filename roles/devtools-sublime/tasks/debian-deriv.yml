@@ -1,0 +1,8 @@
+- name: Add sublime apt key
+  apt_key: data="{{ lookup('file', 'sublimehq-pub.key') }}" state=present
+
+- name: Add apt repo for sublime
+  apt_repository: repo='deb https://download.sublimetext.com/ apt/stable/'
+
+- name: Install sublime
+  apt: name=sublime-text state=present

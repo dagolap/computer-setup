@@ -1,0 +1,11 @@
+- name: Add virtualbox apt key
+  apt_key: data="{{ lookup('file', 'oracle_vbox.asc') }}" state=present
+
+- name: Add virtualbox 2016 apt key
+  apt_key: data="{{ lookup('file', 'oracle_vbox_2016.asc') }}" state=present
+
+- name: Add apt repo for virtualbox
+  apt_repository: repo='deb https://download.virtualbox.org/virtualbox/debian jessie contrib'
+
+- name: Install virtualbox
+  apt: name=virtualbox-6.0 state=present

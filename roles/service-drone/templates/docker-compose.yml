@@ -1,0 +1,76 @@
+# version: '3'
+# services:
+#   db:
+#     image: postgres
+#     restart: always
+#     networks:
+#       - traefik-external
+#       - default
+#     # ports:
+#     #   - "5432:5432"
+#     volumes:
+#       - db-data:/var/lib/postgresql/data
+#     environment:
+#       - POSTGRES_USER=concourse
+#       - POSTGRES_PASSWORD=concoursepasswd
+#       - POSTGRES_DB=atc
+#   concourse:
+#     image: concourse/concourse
+#     networks:
+#       - traefik-external
+#       - default
+#     privileged: true
+#     # ports:
+#     #   - "8080:8080"
+#     environment:
+#       - CONCOURSE_BAGGAGECLAIM_DRIVER=overlay
+#     command: |
+#       quickstart
+#       --add-local-user=dagolap:Aiz3ilie
+#       --main-team-local-user=dagolap
+#       --external-url=https://concourse.bitnexus.net
+#       --postgres-user=concourse
+#       --postgres-password=concoursepasswd
+#       --postgres-host=db
+#       --worker-garden-dns-server 8.8.8.8
+#       --worker-work-dir /concoursedata
+#     labels:
+#       - "traefik.backend=concourse-backend"
+#       - "traefik.docker.network=traefik-external"
+#       - "traefik.frontend.rule=Host:concourse.bitnexus.net"
+#       - "traefik.enable=true"
+#       - "traefik.port=8080"
+
+
+version: "3"
+services: 
+  drone:
+    image: drone/drone:1.0.0-rc.5 
+    restart: always
+    depends_on: 
+      - gitea
+    volumes:
+      - drone-data:/var/lib/drone/
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - traefik-external
+    environment:
+      - DRONE_GITEA_SERVER=https://gitea.bitnexus.net
+      - DRONE_GIT_ALWAYS_AUTH=false
+      - DRONE_RUNNER_CAPACITY=2
+      - DRONE_SERVER_HOST=drone.bitnexus.net
+      - DRONE_SERVER_PROTO=https
+      - DRONE_TLS_AUTOCERT=false
+    labels:
+      - "traefik.backend=drone-backend"
+      - "traefik.docker.network=traefik-external"
+      - "traefik.frontend.rule=Host:drone.bitnexus.net"
+      - "traefik.enable=true"
+      - "traefik.port=80"
+
+volumes:
+  drone-data:
+
+networks:
+  traefik-external:
+    external: true

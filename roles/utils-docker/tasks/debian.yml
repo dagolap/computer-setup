@@ -1,0 +1,10 @@
+- name: Add docker apt key
+  apt_key: data="{{ lookup('file', 'docker-release-tool.asc') }}" state=present
+
+- name: Add apt repo for docker
+  apt_repository: repo='deb [arch=amd64] https://download.docker.com/linux/debian buster stable'
+
+- name: Install docker
+  apt: name=docker-ce state=present
+
+- include: common.yml

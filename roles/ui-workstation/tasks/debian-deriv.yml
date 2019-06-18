@@ -1,17 +1,16 @@
 - name: Install useful GUI utilities
-  dnf:
+  apt:
     state: present
     name:
       - chromium
       - firefox
       - keepassxc
       - libreoffice
-      - libreoffice-langpack-nb
-      - libreoffice-langpack-nn
+      - libreoffice-l10n-nb
+      - libreoffice-l10n-nn
       - menulibre
       - mpv
-      - pygtksourceview # Required for source view plugin of Zim
-      - python2-inotify # Required for file watches in syncthing-gtk
+      - python-pyinotify # Required for file watches in syncthing-gtk
       - remmina
       - rofi
       - syncthing-gtk
@@ -19,4 +18,5 @@
       - thunderbird
       - youtube-dl # Required by mpv to play directly from youtube urls
       - zeal
-      - Zim
+      - zim
+

@@ -26,6 +26,8 @@
       private: no
       
   roles:
+    - role: deploy-prereqs
+      tags: [prereqs]
     - role: extra-repos
       tags: [extras, repos]
       when: run_basics == "Y" or run_basics == "y"

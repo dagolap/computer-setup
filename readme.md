@@ -16,5 +16,4 @@ Repository to set up a new computer.
 5. `ansible-playbook -i inventory playbook-localhost-workstation.yml --become --ask-become-pass`
 
 ## TODO
-* Java dev environment (Oracle java, IntelliJ, gradle, ++)
 * Some more configuration of GUI-stuff (desktops, keyboard shortcuts, etc.)

@@ -19,6 +19,9 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 # Vagrant
 export VAGRANT_DEFAULT_PROVIDER='virtualbox'
 
+# Python
+export PATH="$PATH:/home/dagolap/.local/bin/"
+
 # Editor stuff
 export EDITOR='emacsclient -nw -c -a ""'
 alias emacs='emacsclient -nw -c -a ""'
@@ -30,3 +33,7 @@ alias vim=e
 alias res_add1080='xrandr --newmode "1920x1080_60" 173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync && xrandr --addmode eDP-1 1920x1080_60'
 alias res_edp1080='xrandr --output eDP-1 --mode 1920x1080_60'
 alias res_work='xrandr --output eDP-1 --mode 1920x1080_60 --pos 0x0 --rotate normal --output HDMI-2 --mode 2560x1440 --rotate normal --pos 1920x-800'
+
+# Guix
+#export PATH="/home/dagolap/.guix-profile/bin${PATH:+:}$PATH"
+export XDG_DATA_DIRS=$HOME/.guix-profile/share:$XDG_DATA_DIRS

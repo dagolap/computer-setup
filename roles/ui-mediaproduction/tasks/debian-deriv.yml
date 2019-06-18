@@ -1,0 +1,12 @@
+- name: Install media production applications
+  apt:
+    state: present
+    name:
+      - audacity
+      - darktable
+      - gimp
+      - handbrake
+      - inkscape
+      - kdenlive
+      - krita
+      - obs-studio

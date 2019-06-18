@@ -1,3 +1,8 @@
+Debian:
+Snap as base role
+Docker
+
+
 SNAP
  - install snapd as base role
  - role for some nice desktop snap apps such as spotify

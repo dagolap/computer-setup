@@ -1,5 +1,6 @@
 - include: fedora.yml
   when: ansible_distribution == "Fedora"
 
-- include: ubuntu.yml
-  when: ansible_distribution == "Ubuntu"
+- include: debian-deriv.yml
+  when: ansible_distribution == "Ubuntu" or
+        ansible_distrubution == "Debian"

@@ -1,0 +1,49 @@
+- name: Create factorio server base config folder
+  become: yes
+  file:
+    path: "{{ factorio.root_folder}}"
+    state: directory
+    owner: root
+    group: root
+    mode: 755
+
+- name: Create folders to store factorio server data
+  become: yes
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: 845
+    group: 845
+    mode: 0700
+  with_items:
+    - "{{ factorio.root_folder}}/data/"
+    - "{{ factorio.root_folder}}/data/config/"
+
+- name: Copy factorio docker config
+  become: yes
+  template:
+    src: docker-compose.yml
+    dest: "{{ factorio.root_folder}}/docker-compose.yml"
+    owner: root
+    group: root
+    mode: 0600
+
+- name: Copy factorio server config
+  become: yes
+  template:
+    src: "{{ item }}"
+    dest: "{{ factorio.root_folder}}/data/config/{{ item }}"
+    owner: 845
+    group: 845
+    mode: 0600
+  with_items:
+    - map-gen-settings.json
+    - map-settings.json
+    - server-settings.json
+    - server-whitelist.json
+
+- name: Redeploy factorio server container - will pull and restart if necessary
+  become: yes
+  command: docker stack deploy --prune -c {{ factorio.root_folder}}/docker-compose.yml factorio
+  args:
+    chdir: "{{ factorio.root_folder}}"

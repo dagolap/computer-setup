@@ -1,0 +1,2 @@
+- name: Install neovim
+  apt: name=neovim state=present
