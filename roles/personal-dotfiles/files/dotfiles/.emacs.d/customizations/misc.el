@@ -14,6 +14,13 @@
 ;; Ignore case when sorting
 (setq sort-fold-case t)
 
+;; .projectile files should be the only known projects
+;; We want no no .git-magic etc.
+(setq projectile-project-root-files #'( ".projectile" ))
+(setq projectile-project-root-files-functions #'(projectile-root-top-down
+                                                 projectile-root-top-down-recurring
+                                                 projectile-root-bottom-up
+                                                 projectile-root-local))
 ;; Enables projectile navigation mode
 ;;(setq projectile-require-project-root nil)
 (projectile-global-mode)

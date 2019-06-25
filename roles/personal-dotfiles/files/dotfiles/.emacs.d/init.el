@@ -84,6 +84,8 @@
     ; clojure-mode                    ; keybindings and syntax highlighting
     ; clojure-mode-extra-font-locking ; extra syntax highlighting for clojure
     ; cider                           ; repl integration
+    ;; Racket
+    racket-mode
     ))
 
 ;; On OS X, an Emacs instance started from the graphical user

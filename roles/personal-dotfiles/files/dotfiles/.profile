@@ -11,7 +11,7 @@ export GOPATH="$HOME/dev/go"
 export PATH="$PATH:$GOPATH/bin"
 
 # Javascript
-NPM_PACKAGES="$HOME/.npm-packages/"
+NPM_PACKAGES="$HOME/.npm-packages"
 export PATH="$PATH:$NPM_PACKAGES/bin"
 unset MANPATH
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
