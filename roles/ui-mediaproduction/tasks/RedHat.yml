@@ -1,0 +1,12 @@
+- name: Install media production applications
+  dnf:
+    state: present
+    name:
+      - audacity
+      - darktable
+      - gimp
+      - HandBrake-gui
+      - inkscape
+      - kdenlive
+      - krita
+      - obs-studio

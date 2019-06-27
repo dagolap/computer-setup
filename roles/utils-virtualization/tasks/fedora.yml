@@ -8,9 +8,10 @@
     repo_gpgcheck: yes
 
 - name: Install virtualization tools (dnf)
-  dnf: name={{ item }} state=present
-  with_items:
-    - kernel-devel
-    - dkms
-    - VirtualBox-5.2
-    - vagrant
+  dnf:
+    state: present
+    name:
+      - kernel-devel
+      - dkms
+      - VirtualBox-6.0
+      - vagrant

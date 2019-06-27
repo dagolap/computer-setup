@@ -2,7 +2,7 @@
   yum_repository:
     name: docker-ce
     description: Docker Community Edition Repository
-    baseurl: https://download.docker.com/linux/fedora/$releasever/$basearch/stable
+    baseurl: https://download.docker.com/linux/fedora/29/$basearch/stable
     enabled: yes
     gpgkey: https://download.docker.com/linux/fedora/gpg
     gpgcheck: yes

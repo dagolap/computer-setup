@@ -1,5 +1,38 @@
-- include: fedora.yml
-  when: ansible_distribution == "Fedora"
+- name: Install basic shell utilities (All platforms)
+  package:
+    state: present
+    name: 
+      - curl
+      - emacs
+      - git
+      - htop
+      - inotify-tools
+      - jq
+      - mosh
+      - progress
+      - tmux
+      - vim
+      - zsh
 
-- include: ubuntu.yml
-  when: ansible_distribution == "Ubuntu"
+- include_vars:
+    file: "{{ item }}"
+    name: platform_specific
+  with_first_found:
+    - "{{ ansible_os_family }}.yml"
+    - default.yml
+
+- name: Install basic shell utilities (Platform specific names)
+  package:
+    name: "{{ platform_specific.packages }}"
+    state: present
+
+- name: Install oh-my-zsh
+  git:
+    repo: https://github.com/robbyrussell/oh-my-zsh.git
+    dest: ~/.oh-my-zsh
+  become_user: "{{ user }}"
+
+- name: Change shell to zsh
+  user:
+    name: "{{ user }}"
+    shell: /bin/zsh

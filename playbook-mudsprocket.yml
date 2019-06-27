@@ -1,0 +1,27 @@
+- hosts: localhost
+      
+  roles:
+    - role: extra-repos
+      tags: [extras, repos]
+    - role: personal-dotfiles
+      tags: [shell, ui, personal, dotfiles]
+    - role: shell-basics
+      tags: [shell, shell-basics]
+    - role: ui-basics
+      tags: [ui, ui-basics]
+    - role: ui-workstation
+      tags: [ui, workstation]
+    - role: ui-mediaproduction
+      tags: [ui, mediaproduction]
+    - role: devtools-vscode
+      tags: [ui, devtools, vscode]
+    - role: devtools-neovim
+      tags: [shell, devtools, neovim]
+    - role: devtools-emacs
+      tags: [shell, devtools, emacs]
+    - role: devtools-sublime
+      tags: [ui, devtools, sublime]
+    - role: utils-docker
+      tags: [utils, docker]
+    - role: utils-virtualization
+      tags: [utils, virtualization]

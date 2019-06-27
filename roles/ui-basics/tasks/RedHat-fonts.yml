@@ -12,17 +12,17 @@
 #
 # Fira Code font (With nice ligatures for programming)
 #
-- stat: path={{ font_path }}/FiraCode_1.102
+- stat: path={{ font_path }}/{{ fira_version }}
   become_user: "{{ user }}"
   register: firacode_files
 
 - name: Download Fira Code archive
-  get_url: url=https://github.com/tonsky/FiraCode/releases/download/1.102/FiraCode_1.102.zip dest=~/Downloads/FiraCode_1.102.zip
+  get_url: url=https://github.com/tonsky/FiraCode/releases/download/1.206/{{ fira_version }}.zip dest=~/Downloads/{{ fira_version }}.zip
   become_user: "{{ user }}"
   when: firacode_files.stat.exists == False
 
 - name: Unpack Fira Code archive
-  unarchive: src=~/Downloads/FiraCode_1.102.zip dest={{ font_path }} copy=no
+  unarchive: src=~/Downloads/{{ fira_version }}.zip dest={{ font_path }} copy=no
   become_user: "{{ user }}"
   when: firacode_files.stat.exists == False
 
@@ -63,10 +63,11 @@
 # Install some nice basic fonts from the repos
 #
 - name: Install some nice basic fonts from the repos
-  dnf: name={{ item }} state=present
-  with_items:
-    - open-sans-fonts
-    - roboto-fontface-fonts
+  dnf:
+    name:
+      - open-sans-fonts
+      - roboto-fontface-fonts
+    state: present
 
 #
 # Update font cache to enable all our new fonts.

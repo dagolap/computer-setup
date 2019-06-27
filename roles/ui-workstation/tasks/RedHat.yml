@@ -1,0 +1,27 @@
+- name: Add Google Chrome repository (yum)
+  yum_repository:
+    name: google-chrome
+    description: Google Chrome Repository
+    baseurl: http://dl.google.com/linux/chrome/rpm/stable/x86_64
+    gpgkey: https://dl.google.com/linux/linux_signing_key.pub
+    gpgcheck: yes
+
+- name: Install useful GUI utilities
+  dnf:
+    state: present
+    name:
+      - firefox
+      - google-chrome-unstable
+      - keepassxc
+      - libreoffice
+      - libreoffice-langpack-nb
+      - libreoffice-langpack-nn
+      - mpv
+      - pygtksourceview # Required for source view plugin of Zim
+      - python2-inotify # Required for file watches in syncthing-gtk
+      - rofi
+      - syncthing-gtk
+      - terminator
+      - youtube-dl # Required by mpv to play directly from youtube urls
+      - zeal
+      - Zim

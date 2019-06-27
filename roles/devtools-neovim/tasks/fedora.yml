@@ -8,10 +8,11 @@
     gpgcheck: yes
 
 - name: Install Neovim (Fedora)
-  dnf: name={{ item }} state=present
-  with_items:
-    - neovim
-    - python2-neovim
-    - python3-neovim
+  dnf:
+    state: present
+    name:
+      - neovim
+      - python2-neovim
+      - python3-neovim
 
 - include: common.yml
