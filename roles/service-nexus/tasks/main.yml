@@ -1,0 +1,25 @@
+- name: Deploy nexus
+  become: yes
+  docker_compose:
+    project_name: nexus
+    definition:
+      version: "2"
+      services:
+        nexus:
+          image: sonatype/nexus3
+          restart: always
+          volumes:
+            - nexus-data:/nexus-data
+          networks:
+            - traefik-external
+          labels:
+            - "traefik.backend=nexus-backend"
+            - "traefik.docker.network=traefik-internal"
+            - "traefik.frontend.rule=Host:nexus.bitnexus.net"
+            - "traefik.enable=true"
+            - "traefik.port=8081"
+      networks:
+        traefik-external:
+          external: yes
+      volumes:
+        nexus-data:
