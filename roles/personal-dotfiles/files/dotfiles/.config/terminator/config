@@ -57,6 +57,8 @@
 [profiles]
   [[default]]
     background_color = "#1d1f21"
+    background_darkness = 0.75
+    background_type = transparent
     cursor_color = "#c5c8c6"
     font = SauceCodePro Nerd Font Mono Medium 12
     foreground_color = "#c5c8c6"
