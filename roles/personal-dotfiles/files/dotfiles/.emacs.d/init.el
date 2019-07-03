@@ -86,6 +86,8 @@
     ; cider                           ; repl integration
     ;; Racket
     racket-mode
+    ;; Nix
+    nix-mode
     ))
 
 ;; On OS X, an Emacs instance started from the graphical user
