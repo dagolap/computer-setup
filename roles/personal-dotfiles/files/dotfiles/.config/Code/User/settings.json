@@ -7,7 +7,7 @@
     "editor.fontSize": 18,
 
     // Turn on ligatures.
-    "editor.fontLigatures": false,
+    "editor.fontLigatures": true,
     "workbench.activityBar.visible": true,
     "workbench.sideBar.location": "left",
     "window.zoomLevel": 0,
