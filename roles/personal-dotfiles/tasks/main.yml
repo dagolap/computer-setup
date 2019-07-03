@@ -24,6 +24,7 @@
     - .config/rofi/config
     - .config/rofi/theme-dag.rasi
     - .config/terminator/config
+    - .config/sway/config
     - .emacs.d
     - .gitconfig
     - .local/share/applications/emacs.desktop
