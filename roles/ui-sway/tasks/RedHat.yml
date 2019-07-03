@@ -1,0 +1,29 @@
+- name: Add Sway repository
+  yum_repository:
+    name: tofik-sway
+    description: Copr repo for sway owned by tofik
+    baseurl: https://copr-be.cloud.fedoraproject.org/results/tofik/sway/fedora-$releasever-$basearch/
+    gpgkey: https://copr-be.cloud.fedoraproject.org/results/tofik/sway/pubkey.gpg
+    gpgcheck: yes
+
+https://copr-be.cloud.fedoraproject.org/results/tofik/sway/pubkey.gpg- name: Add Mako repository
+  yum_repository:
+    name: shengis-mako
+    description: Copr repo for mako owned by shengis
+    baseurl: https://copr-be.cloud.fedoraproject.org/results/shengis/mako/fedora-$releasever-$basearch/
+    gpgkey: https://copr-be.cloud.fedoraproject.org/results/shengis/mako/pubkey.gpg
+    gpgcheck: yes
+
+- name: Install sway related packages
+  dnf:
+    state: present
+    name:
+      - sway
+      - light
+      - mako
+
+- git:
+    become_user: "{{ user }}"
+    repo: https://github.com/tobi-wan-kenobi/bumblebee-status.git
+    dest: ~/bin/apps/bumblebee-status
+    version: master
