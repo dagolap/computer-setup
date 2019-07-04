@@ -52,7 +52,7 @@ set $right l
 set $term terminator
 # Your preferred application launcher
 #set $menu dmenu_run
-set $menu "rofi -show drun -show-icon"
+set $menu "rofi -show drun -show-icons"
 
 ### Key bindings
 #
