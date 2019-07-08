@@ -24,7 +24,3 @@ export EDITOR='emacsclient -nw -c -a ""'
 alias emacs='emacsclient -nw -c -a ""'
 alias e='emacsclient -nw -c -a ""'
 alias ew='emacsclient -c -a ""'
-
-## Snap Desktop integration
-SNAP_XDG_PATH=/var/lib/snapd/desktop
-export XDG_DATA_DIRS=$XDG_DATA_DIRS:$SNAP_XDG_PATH
