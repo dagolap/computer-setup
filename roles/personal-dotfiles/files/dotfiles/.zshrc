@@ -85,3 +85,8 @@ emulate zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -f ~/.nix-profile/etc/profile.d/nix.sh ] && . ~/.nix-profile/etc/profile.d/nix.sh
+
+if [ -n "$GUIX_ENVIRONMENT" ]
+then
+  export PS1=$'\n'"(GUIX: $GUIX_ENVIRONMENT)$PROMPT"
+fi
