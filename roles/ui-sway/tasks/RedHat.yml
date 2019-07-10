@@ -1,17 +1,9 @@
 - name: Add Sway repository
   yum_repository:
-    name: tofik-sway
-    description: Copr repo for sway owned by tofik
-    baseurl: https://copr-be.cloud.fedoraproject.org/results/tofik/sway/fedora-$releasever-$basearch/
-    gpgkey: https://copr-be.cloud.fedoraproject.org/results/tofik/sway/pubkey.gpg
-    gpgcheck: yes
-
-https://copr-be.cloud.fedoraproject.org/results/tofik/sway/pubkey.gpg- name: Add Mako repository
-  yum_repository:
-    name: shengis-mako
-    description: Copr repo for mako owned by shengis
-    baseurl: https://copr-be.cloud.fedoraproject.org/results/shengis/mako/fedora-$releasever-$basearch/
-    gpgkey: https://copr-be.cloud.fedoraproject.org/results/shengis/mako/pubkey.gpg
+    name: gumieri-sway
+    description: Copr repo for sway owned by gumieri
+    baseurl: https://copr-be.cloud.fedoraproject.org/results/gumieri/sway/fedora-$releasever-$basearch/
+    gpgkey: https://copr-be.cloud.fedoraproject.org/results/gumieri/sway/pubkey.gpg
     gpgcheck: yes
 
 - name: Install sway related packages
@@ -21,9 +13,15 @@ https://copr-be.cloud.fedoraproject.org/results/tofik/sway/pubkey.gpg- name: Add
       - sway
       - light
       - mako
+      - grim
+      - slurp
+      # Below: Not sway related, but useful apps nontheless
+      - pavucontrol
+      - NetworkManager-tui
+      - mirage # Image viewer
 
 - git:
-    become_user: "{{ user }}"
     repo: https://github.com/tobi-wan-kenobi/bumblebee-status.git
     dest: ~/bin/apps/bumblebee-status
     version: master
+  become_user: "{{ user }}"
