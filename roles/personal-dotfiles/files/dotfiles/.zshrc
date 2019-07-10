@@ -49,7 +49,7 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git nix-shell nix-zsh-completions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -87,9 +87,17 @@ emulate zsh
 [ -f ~/.nix-profile/etc/profile.d/nix.sh ] && . ~/.nix-profile/etc/profile.d/nix.sh
 
 GUIX_PROFILE="$HOME/.guix-profile"
+export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
+
 [ -f $GUIX_PROFILE/etc/profile ] && source $GUIX_PROFILE/etc/profile
 
 if [ -n "$GUIX_ENVIRONMENT" ]
 then
   export PS1=$'\n'"(GUIX: $GUIX_ENVIRONMENT)$PROMPT"
 fi
+
+if [ -n "$IN_NIX_SHELL" ]
+then
+  export PS1=$'\n'"(NIX:$IN_NIX_SHELL)$PROMPT"
+fi
+

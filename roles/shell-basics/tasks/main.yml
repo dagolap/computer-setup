@@ -32,6 +32,18 @@
     dest: ~/.oh-my-zsh
   become_user: "{{ user }}"
 
+- name: Install oh-my-zsh nix shell plugin
+  git:
+    repo: https://github.com/chisui/zsh-nix-shell.git
+    dest: ~/.oh-my-zsh/custom/plugins/nix-shell
+  become_user: "{{ user }}"
+
+- name: Install oh-my-zsh nix completions plugin
+  git:
+    repo: https://github.com/spwhitt/nix-zsh-completions.git
+    dest: ~/.oh-my-zsh/custom/plugins/nix-zsh-completions
+  become_user: "{{ user }}"
+
 - name: Change shell to zsh
   user:
     name: "{{ user }}"
