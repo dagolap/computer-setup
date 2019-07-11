@@ -19,7 +19,3 @@ export EDITOR='emacsclient -nw -c -a ""'
 alias emacs='emacsclient -nw -c -a ""'
 alias e='emacsclient -nw -c -a ""'
 alias ew='emacsclient -c -a ""'
-
-# Guix
-export PATH="$HOME/.config/guix/current/bin:$PATH"
-export INFOPATH="$HOME/.config/guix/current/share/info:$INFOPATH"
