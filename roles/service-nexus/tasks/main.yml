@@ -6,12 +6,14 @@
       version: "2"
       services:
         nexus:
-          image: sonatype/nexus3
+          image: sonatype/nexus3:3.18.1
           restart: always
           volumes:
             - nexus-data:/nexus-data
           networks:
             - traefik-external
+          ports:
+            - "22500:22500"
           labels:
             - "traefik.backend=nexus-backend"
             - "traefik.docker.network=traefik-internal"
