@@ -6,7 +6,9 @@
     - ~/.config/
     - ~/.config/Code/
     - ~/.config/fontconfig/conf.d/
+    - ~/.config/i3/
     - ~/.config/rofi/
+    - ~/.config/sway/
     - ~/.config/terminator/
     - ~/.local/share/applications/
   become_user: "{{ user }}"
@@ -25,6 +27,7 @@
     - .config/rofi/theme-dag.rasi
     - .config/terminator/config
     - .config/sway/config
+    - .config/i3/config
     - .emacs.d
     - .gitconfig
     - .local/share/applications/emacs.desktop

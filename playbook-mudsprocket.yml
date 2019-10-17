@@ -9,8 +9,8 @@
       tags: [shell, shell-basics]
     - role: ui-basics
       tags: [ui, ui-basics]
-    - role: ui-sway
-      tags: [ui, sway]
+    - role: ui-i3
+      tags: [ui, i3]
     - role: ui-workstation
       tags: [ui, workstation]
     - role: ui-mediaproduction

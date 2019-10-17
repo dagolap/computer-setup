@@ -1,0 +1,11 @@
+- name: Install i3 related packages
+  dnf:
+    state: present
+    name:
+      - i3
+      - i3lock
+      - feh # Set image background
+      - compton # Compositing
+      - dunst # Notifications
+      # TODO: Dunst config
+
