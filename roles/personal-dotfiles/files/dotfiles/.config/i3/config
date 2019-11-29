@@ -18,7 +18,7 @@ exec --no-startup-id xrandr --output "eDP-1" --mode 1920x1080 --scale 1x1
 font pango:DejaVu Sans Mono 10
 
 # Background
-exec_always --no-startup-id feh --bg-scale /home/dagolap/Pictures/wallpapers/111725.jpg
+exec_always --no-startup-id feh --bg-scale /home/dagolap/Pictures/wallpapers/34605.jpg
 
 # Mouse setup
 set $touchpad "DELL08AF:00 06CB:76AF Touchpad"
@@ -156,6 +156,11 @@ bindsym $mod+r mode "resize"
 # Screen brightness
 bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86MonBrightnessDown exec light -U 5
+
+# Volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
 # Lock screen
 bindsym $mod+Mod1+l exec i3lock
