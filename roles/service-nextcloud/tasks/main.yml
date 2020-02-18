@@ -30,7 +30,7 @@
             - nextcloud
           labels:
             - "traefik.backend=nextcloud-backend"
-            - "traefik.docker.network=traefik-internal"
+            - "traefik.docker.network=traefik-external"
             - "traefik.frontend.rule=Host:nextcloud.bitnexus.net"
             - "traefik.enable=true"
             - "traefik.port=80"
