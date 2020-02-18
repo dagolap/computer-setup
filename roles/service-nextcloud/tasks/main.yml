@@ -21,8 +21,6 @@
         app:
           image: nextcloud:18.0.1-apache
           restart: always
-          ports:
-            - 8080:80
           links:
             - db
           volumes:
@@ -32,10 +30,10 @@
             - nextcloud
           labels:
             - "traefik.backend=nextcloud-backend"
-            - "traefik.docker.network=nextcloud-internal"
+            - "traefik.docker.network=traefik-internal"
             - "traefik.frontend.rule=Host:nextcloud.bitnexus.net"
             - "traefik.enable=true"
-            - "traefik.port=8080"
+            - "traefik.port=80"
       networks:
         nextcloud:
         traefik-external:
