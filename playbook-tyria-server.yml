@@ -16,3 +16,5 @@
       tags: [concourse]
     - role: service-nexus
       tags: [nexus]
+    - role: service-nextcloud
+      tags: [nextcloud]

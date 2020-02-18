@@ -1,0 +1,45 @@
+- name: Deploy nextcloud
+  become: yes
+  docker_compose:
+    project_name: nextcloud
+    definition:
+      version: "2"
+      services:
+        db:
+          image: mariadb
+          command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+          restart: always
+          volumes:
+            - db:/var/lib/mysql
+          networks:
+            - nextcloud
+          environment:
+            - MYSQL_ROOT_PASSWORD=asndjssaoienfndndj
+            - MYSQL_PASSWORD=alknasknwodnsnadk
+            - MYSQL_DATABASE=nextcloud
+            - MYSQL_USER=nextcloud
+        app:
+          image: nextcloud:18.0.1-apache
+          restart: always
+          ports:
+            - 8080:80
+          links:
+            - db
+          volumes:
+            - nextcloud:/var/www/html
+          networks:
+            - traefik-external
+            - nextcloud
+          labels:
+            - "traefik.backend=nextcloud-backend"
+            - "traefik.docker.network=nextcloud-internal"
+            - "traefik.frontend.rule=Host:nextcloud.bitnexus.net"
+            - "traefik.enable=true"
+            - "traefik.port=8080"
+      networks:
+        nextcloud:
+        traefik-external:
+          external: yes
+      volumes:
+        db:
+        nextcloud:
