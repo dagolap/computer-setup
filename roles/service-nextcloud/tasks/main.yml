@@ -18,6 +18,11 @@
             - MYSQL_PASSWORD=alknasknwodnsnadk
             - MYSQL_DATABASE=nextcloud
             - MYSQL_USER=nextcloud
+        redis:
+          image: redis:alpine
+          restart: always
+          networks:
+            - nextcloud
         app:
           image: nextcloud:18.0.1-apache
           restart: always
@@ -28,6 +33,9 @@
           networks:
             - traefik-external
             - nextcloud
+          environment:
+            - MYSQL_HOST=db
+            - REDIS_HOST=redis
           labels:
             - "traefik.backend=nextcloud-backend"
             - "traefik.docker.network=traefik-external"
@@ -39,6 +47,15 @@
             - "traefik.frontend.redirect.replacement=https://$$1/remote.php/dav/"
             - "traefik.frontend.headers.STSSeconds=31536000"
             - "traefik.frontend.headers.STSIncludeSubdomains=true"
+        cron:
+          image: nextcloud:18.0.1-apache
+          restart: always
+          volumes:
+            - nextcloud:/var/www/html
+          entrypoint: /cron.sh
+          depends_on:
+            - db
+            - redis
       networks:
         nextcloud:
         traefik-external:
