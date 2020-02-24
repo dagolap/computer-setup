@@ -41,7 +41,7 @@
       version: "2"
       services:
         traefik:
-          image: traefik:1.7
+          image: traefik:1.7.21
           restart: always
           ports:
             - "80:80"
