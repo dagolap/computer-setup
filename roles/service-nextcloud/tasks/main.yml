@@ -52,6 +52,8 @@
           restart: always
           volumes:
             - nextcloud:/var/www/html
+          networks:
+            - nextcloud
           entrypoint: /cron.sh
           depends_on:
             - db
