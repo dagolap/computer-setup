@@ -18,3 +18,5 @@
       tags: [nexus]
     - role: service-nextcloud
       tags: [nextcloud]
+    - role: service-miniflux
+      tags: [miniflux]
