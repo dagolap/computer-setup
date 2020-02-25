@@ -1,0 +1,26 @@
+- name: Deploy bitwardenrs
+  become: yes
+  docker_compose:
+    project_name: bitwardenrs
+    definition:
+      version: '3'
+      services:
+        bitwardenrs:
+          image: bitwardenrs/server:1.13.1
+          volumes:
+            - bitwardenrs-data:/data/
+          networks:
+            - traefik-external
+          environment:
+            - SIGNUPS_DOMAINS_WHITELIST=prestegarden.com
+          labels:
+            - "traefik.backend=bitwardenrs-backend"
+            - "traefik.docker.network=traefik.external"
+            - "traefik.frontend.rule=Host:bitwarden.bitnexus.net"
+            - "traefik.enable=true"
+            - "traefik.port=80"
+      volumes:
+        bitwardenrs-data:
+      networks:
+        traefik-external:
+          external: yes
