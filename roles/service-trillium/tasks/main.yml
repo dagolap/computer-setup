@@ -1,0 +1,25 @@
+- name: Deploy trilium
+  become: yes
+  docker_compose:
+    project_name: trilium
+    definition:
+      version: '3'
+      services:
+        trilium:
+          image: zadam/trilium:0.40.3
+          restart: unless-stopped
+          volumes:
+            - trilium:/root/trilium-data
+          networks:
+            - traefik-external
+          labels:
+            - "traefik.backend=trilium-backend"
+            - "traefik.docker.network=traefik-external"
+            - "traefik.frontend.rule=Host:trilium.bitnexus.net"
+            - "traefik.enable=true"
+            - "traefik.port=8080"
+      volumes:
+        trilium:
+      networks:
+        traefik-external:
+          external: true
