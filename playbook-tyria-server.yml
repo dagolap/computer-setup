@@ -20,3 +20,7 @@
       tags: [nextcloud]
     - role: service-miniflux
       tags: [miniflux]
+    - role: service-trillium
+      tags: [trillium]
+    - role: service-bitwardenrs
+      tags: [bitwardenrs]
