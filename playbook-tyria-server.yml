@@ -24,3 +24,5 @@
       tags: [bitwardenrs]
     - role: service-freshrss
       tags: [freshrss]
+    - role: service-kanboard
+      tags: [kanboard]

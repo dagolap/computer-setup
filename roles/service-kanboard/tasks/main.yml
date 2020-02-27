@@ -1,0 +1,27 @@
+- name: Deploy kanboard
+  become: yes
+  docker_compose:
+    project_name: kanboard
+    definition:
+      version: "3"
+      services:
+        kanboard:
+          image: kanboard/kanboard:v1.2.13
+          restart: unless-stopped
+          volumes:
+            - data:/var/www/app/data
+            - plugins:/var/www/app/plugins
+          networks:
+            - traefik-external
+          labels:
+            - "traefik.backend=kanboard-backend"
+            - "traefik.docker.network=traefik-external"
+            - "traefik.frontend.rule=Host:kanboard.bitnexus.net"
+            - "traefik.enable=true"
+            - "traefik.port=80"
+      volumes:
+        data:
+        plugins:
+      networks:
+        traefik-external:
+          external: true
