@@ -1,0 +1,44 @@
+- name: Deploy FreshRSS
+  become: yes
+  docker_compose:
+    project_name: freshrss
+    definition:
+      version: '3'
+      services:
+        freshrss:
+          image: freshrss/freshrss:1.15.3
+          restart: unless-stopped
+          depends_on:
+            - db
+          volumes:
+            - freshrss-data:/var/www/FreshRSS/data
+          networks:
+            - freshrss
+            - traefik-external
+          environment:
+            - CRON_MIN=*/20
+            - TZ=Europe/Oslo
+          labels:
+            - "traefik.backend=freshrss-backend"
+            - "traefik.docker.network=traefik-external"
+            - "traefik.frontend.rule=Host:freshrss.bitnexus.net"
+            - "traefik.enable=true"
+            - "traefik.port=80"
+        db:
+          image: postgres:latest
+          restart: unless-stopped
+          volumes:
+            - freshrss-db:/var/lib/postgresql/data
+          environment:
+            - POSTGRES_USER=freshrss
+            - POSTGRES_PASSWORD=freshrss
+            - POSTGRES_DB=freshrss
+          networks:
+            - freshrss
+      networks:
+        freshrss:
+        traefik-external:
+          external: yes
+      volumes:
+        freshrss-db:
+        freshrss-data:

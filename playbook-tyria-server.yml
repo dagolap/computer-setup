@@ -18,9 +18,9 @@
       tags: [nexus]
     - role: service-nextcloud
       tags: [nextcloud]
-    - role: service-miniflux
-      tags: [miniflux]
     - role: service-trillium
       tags: [trillium]
     - role: service-bitwardenrs
       tags: [bitwardenrs]
+    - role: service-freshrss
+      tags: [freshrss]
