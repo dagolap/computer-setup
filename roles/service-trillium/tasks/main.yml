@@ -6,7 +6,7 @@
       version: '3'
       services:
         trilium:
-          image: zadam/trilium:0.40.3
+          image: zadam/trilium:0.41.5
           restart: unless-stopped
           volumes:
             - trilium:/root/trilium-data
