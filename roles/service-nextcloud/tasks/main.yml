@@ -24,7 +24,7 @@
           networks:
             - nextcloud
         app:
-          image: nextcloud:18.0.3-apache
+          image: nextcloud:18.0.4-apache
           restart: always
           links:
             - db

@@ -33,7 +33,7 @@
       version: "2"
       services:
         web:
-          image: gitea/gitea:1.11.4
+          image: gitea/gitea:1.11.5
           restart: always
           volumes:
             - /opt/gitea/data:/data
