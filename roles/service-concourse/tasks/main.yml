@@ -18,7 +18,7 @@
           volumes:
             - pgdata:/var/lib/postgresql/data
         concourse:
-          image: concourse/concourse:6.1.0
+          image: concourse/concourse:6.7.4
           restart: always
           command: quickstart
           privileged: true
