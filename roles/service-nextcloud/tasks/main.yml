@@ -48,7 +48,7 @@
             - "traefik.frontend.headers.STSSeconds=31536000"
             - "traefik.frontend.headers.STSIncludeSubdomains=true"
         cron:
-          image: nextcloud:18.0.1-apache
+          image: nextcloud:20.0.6-apache
           restart: always
           volumes:
             - nextcloud:/var/www/html
