@@ -9,7 +9,7 @@
           image: zadam/trilium:0.47.5
           restart: unless-stopped
           volumes:
-            - trilium:/root/trilium-data
+            - trilium:/home/node/trilium-data
           networks:
             - traefik-external
           labels:
