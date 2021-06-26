@@ -18,8 +18,8 @@
       tags: [nexus]
     - role: service-nextcloud
       tags: [nextcloud]
-    - role: service-trillium
-      tags: [trillium]
+    - role: service-trilium
+      tags: [trilium]
     - role: service-bitwardenrs
       tags: [bitwardenrs]
     - role: service-freshrss
