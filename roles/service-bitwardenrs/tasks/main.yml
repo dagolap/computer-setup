@@ -6,7 +6,7 @@
       version: '3'
       services:
         bitwardenrs:
-          image: bitwardenrs/server:1.18.0
+          image: vaultwarden/server:1.21.0
           restart: unless-stopped
           volumes:
             - bitwardenrs-data:/data/
