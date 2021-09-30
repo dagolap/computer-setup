@@ -19,7 +19,12 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 export VAGRANT_DEFAULT_PROVIDER='virtualbox'
 
 # Editor stuff
-export EDITOR='emacsclient -nw -c -a ""'
+#export EDITOR='emacsclient -nw -c -a ""'
+export EDITOR='nvim'
 alias emacs='emacsclient -nw -c -a ""'
 alias e='emacsclient -nw -c -a ""'
 alias ew='emacsclient -c -a ""'
+
+export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$HOME/bin/apps/flutter/bin:$PATH"
+export PATH="$HOME/.dotnet/tools:$PATH"

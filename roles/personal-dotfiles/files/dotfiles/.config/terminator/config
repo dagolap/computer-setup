@@ -1,49 +1,59 @@
 [global_config]
   focus = mouse
-  inactive_color_offset = 0.604938271605
-  title_inactive_bg_color = "#373b41"
-  title_inactive_fg_color = "#c5c8c6"
-  title_transmit_bg_color = "#282a2e"
   title_transmit_fg_color = "#c5c8c6"
+  title_transmit_bg_color = "#282a2e"
+  title_inactive_fg_color = "#c5c8c6"
+  title_inactive_bg_color = "#373b41"
+  inactive_color_offset = 0.604938271605
 [keybindings]
-  broadcast_all = <Primary><Shift>a
-  broadcast_group = <Primary><Shift>g
-  broadcast_off = <Primary><Shift>o
-  close_term = None
-  close_window = None
-  edit_tab_title = None
-  edit_terminal_title = None
-  edit_window_title = None
+  new_tab = None
+  go_up = <Primary><Shift>Up
   go_down = <Primary><Shift>Down
   go_left = <Primary><Shift>Left
   go_right = <Primary><Shift>Right
-  go_up = <Primary><Shift>Up
-  group_all = None
-  group_tab = None
-  help = None
-  hide_window = None
-  insert_number = None
-  insert_padded = None
-  layout_launcher = None
-  move_tab_left = None
-  move_tab_right = None
-  new_tab = None
-  new_terminator = None
-  new_window = None
-  next_tab = None
-  prev_tab = None
+  rotate_cw = None
+  rotate_ccw = None
+  split_horiz = <Primary><Shift>h
+  close_term = None
+  toggle_scrollbar = None
+  close_window = None
+  resize_up = None
   resize_down = None
   resize_left = None
   resize_right = None
-  resize_up = None
-  rotate_ccw = None
-  rotate_cw = None
-  scaled_zoom = None
-  split_horiz = <Primary><Shift>h
-  toggle_scrollbar = None
+  move_tab_right = None
+  move_tab_left = None
   toggle_zoom = None
+  scaled_zoom = None
+  next_tab = None
+  prev_tab = None
+  hide_window = None
+  group_all = None
   ungroup_all = None
+  group_tab = None
   ungroup_tab = None
+  new_window = None
+  new_terminator = None
+  broadcast_off = <Primary><Shift>o
+  broadcast_group = <Primary><Shift>g
+  broadcast_all = <Primary><Shift>a
+  insert_number = None
+  insert_padded = None
+  edit_window_title = None
+  edit_tab_title = None
+  edit_terminal_title = None
+  layout_launcher = None
+  help = None
+[profiles]
+  [[default]]
+    background_color = "#282828"
+    background_darkness = 0.75
+    cursor_color = "#c5c8c6"
+    font = SauceCodePro Nerd Font Mono Medium 12
+    foreground_color = "#ebdbb2"
+    scrollbar_position = hidden
+    scrollback_lines = 4000
+    use_system_font = False
 [layouts]
   [[default]]
     [[[child1]]]
@@ -54,14 +64,3 @@
       parent = ""
       type = Window
 [plugins]
-[profiles]
-  [[default]]
-    background_color = "#282828"
-    background_darkness = 0.75
-    background_type = transparent
-    cursor_color = "#c5c8c6"
-    font = SauceCodePro Nerd Font Mono Medium 12
-    foreground_color = "#ebdbb2"
-    scrollback_lines = 4000
-    scrollbar_position = hidden
-    use_system_font = False
