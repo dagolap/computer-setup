@@ -17,6 +17,7 @@
         {
             Ensure = "Present"
             Name = @(
+                "brave"
                 "googlechrome"
                 "firefox"
             )
@@ -32,14 +33,13 @@
                 "putty"
                 "winscp"
                 "vscode"
-                "cmder"
                 "git"
                 "7zip"
                 "nodejs"
-                "keepassxc"
                 "synctrayzor"
                 "deluge"
                 "altdrag"
+                "joplin"
 
             )
             DependsOn = "[cChocoInstaller]installChoco"
