@@ -28,3 +28,4 @@ alias ew='emacsclient -c -a ""'
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$HOME/bin/apps/flutter/bin:$PATH"
 export PATH="$HOME/.dotnet/tools:$PATH"
+export PATH="/var/lib/snapd/snap/bin:$PATH"
