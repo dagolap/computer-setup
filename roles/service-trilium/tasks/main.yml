@@ -1,6 +1,7 @@
 - name: Deploy trilium
   become: yes
   docker_compose:
+    stopped: yes
     project_name: trilium
     definition:
       version: '3'
