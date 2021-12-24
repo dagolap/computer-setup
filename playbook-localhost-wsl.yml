@@ -1,0 +1,8 @@
+- hosts: localhost
+  roles:
+    - role: personal-dotfiles
+      tags: [shell, ui, personal, dotfiles]
+    - role: shell-basics
+      tags: [shell, shell-basics]
+    - role: devtools-neovim
+      tags: [shell, devtools, neovim]

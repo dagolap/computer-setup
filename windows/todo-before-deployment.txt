@@ -1,5 +1,11 @@
 ﻿# Allow running locally created scripts
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Force
+Set-ExecutionPolicy RemoteSigned
+
+# Run winget --list or something and accept license agreement
+
+#
+# To use Chocolatey DSC configuration:
+#
 
 # First as admin, setup winrm for remote management.
 winrm quickconfig
