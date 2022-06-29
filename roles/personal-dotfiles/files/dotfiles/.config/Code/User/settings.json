@@ -94,5 +94,11 @@
     "hediet.vscode-drawio.theme": "Kennedy",
     "omnisharp.enableImportCompletion": true,
     "omnisharp.enableRoslynAnalyzers": true,
-    "omnisharp.organizeImportsOnFormat": true
+    "omnisharp.organizeImportsOnFormat": true,
+    "workbench.colorTheme": "Atom One Dark",
+    "workbench.tree.indent": 20,
+    "explorer.autoReveal": false,
+    "window.zoomLevel": -1,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "codestream.serverUrl": "https://api.codestream.com"
 }

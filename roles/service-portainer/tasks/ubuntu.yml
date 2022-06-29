@@ -1,5 +1,0 @@
-- name: Copy portainer service
-  template: src=portainer.service.j2 dest=/etc/systemd/system/portainer.service owner=root group=root mode=0755
-
-- name: Ensure portainer service is started
-  command: systemctl daemon-reload

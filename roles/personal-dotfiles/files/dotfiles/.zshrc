@@ -91,3 +91,5 @@ then
   export PS1=$'\n'"(NIX:$IN_NIX_SHELL)$PROMPT"
 fi
 
+
+export PATH="$HOME/.poetry/bin:$PATH"

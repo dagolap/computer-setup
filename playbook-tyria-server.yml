@@ -28,3 +28,5 @@
       tags: [kanboard]
     - role: service-uptimekuma
       tags: [uptimekuma]
+    - role: service-portainer
+      tags: [portainer]

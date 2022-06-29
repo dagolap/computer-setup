@@ -1,5 +1,26 @@
-- include: fedora.yml
-  when: ansible_distribution == "Fedora"
-
-- include: ubuntu.yml
-  when: ansible_distribution == "Ubuntu"
+- name: Set up Portainer
+  become: yes
+  docker_compose:
+    project_name: portainer
+    definition:
+      version: "2"
+      services:
+        portainer:
+          image: portainer/portainer-ce:2.9.3
+          restart: unless-stopped
+          volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+            - portainer-data:/data
+          networks:
+            - traefik-external
+          labels:
+            - "traefik.backend=portainer-backend"
+            - "traefik.docker.network=traefik-internal"
+            - "traefik.frontend.rule=Host:portainer.bitnexus.net"
+            - "traefik.enable=true"
+            - "traefik.port=9000"
+      networks:
+        traefik-external:
+          external: yes
+      volumes:
+        portainer-data:

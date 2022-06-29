@@ -19,8 +19,8 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 export VAGRANT_DEFAULT_PROVIDER='virtualbox'
 
 # Editor stuff
-#export EDITOR='emacsclient -nw -c -a ""'
-export EDITOR='nvim'
+export EDITOR='emacsclient -nw -c -a ""'
+#export EDITOR='nvim'
 alias emacs='emacsclient -nw -c -a ""'
 alias e='emacsclient -nw -c -a ""'
 alias ew='emacsclient -c -a ""'
