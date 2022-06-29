@@ -25,7 +25,17 @@ alias emacs='emacsclient -nw -c -a ""'
 alias e='emacsclient -nw -c -a ""'
 alias ew='emacsclient -c -a ""'
 
+# Deno
+export DENO_INSTALL="/home/dagolap/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+# Flutter
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$HOME/bin/apps/flutter/bin:$PATH"
+
+# Dotnet
 export PATH="$HOME/.dotnet/tools:$PATH"
+
+# Snap
 export PATH="/var/lib/snapd/snap/bin:$PATH"
+
