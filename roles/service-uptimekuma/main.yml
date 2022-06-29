@@ -1,0 +1,25 @@
+- name: Deploy Uptime Kuma
+  become: yes
+  docker_compose:
+    project_name: uptimekuma
+    definition:
+      version: '3'
+      services:
+        uptimekuma:
+          image: louislam/uptime-kuma:1.17.1
+          restart: unless-stopped
+          volumes:
+            - uptimekuma-data:/app/data
+          networks:
+            - traefik-external
+          labels:
+            - "traefik.backend=uptimekuma-backend"
+            - "traefik.docker.network=traefik.external"
+            - "traefik.frontend.rule=Host:kuma.bitnexus.net"
+            - "traefik.enable=true"
+            - "traefik.port=3001"
+      volumes:
+        uptimekuma-data:
+      networks:
+        traefik-external:
+          external: yes

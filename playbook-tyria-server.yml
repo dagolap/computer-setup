@@ -26,3 +26,5 @@
       tags: [freshrss]
     - role: service-kanboard
       tags: [kanboard]
+    - role: service-uptimekuma
+      tags: [uptimekuma]
