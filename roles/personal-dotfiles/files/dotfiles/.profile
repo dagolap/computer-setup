@@ -3,7 +3,7 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Java
-export JAVA_HOME='/usr/lib/jvm/java-1.8.0-openjdk/'
+export JAVA_HOME='/usr/lib/jvm/java'
 
 # Golang
 export GOPATH="$HOME/dev/go"
