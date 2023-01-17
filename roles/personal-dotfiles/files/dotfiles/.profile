@@ -39,3 +39,5 @@ export PATH="$HOME/.dotnet/tools:$PATH"
 # Snap
 export PATH="/var/lib/snapd/snap/bin:$PATH"
 
+# Source non versioned secrets
+source "$HOME/.profile_secrets"
