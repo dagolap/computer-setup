@@ -7,14 +7,16 @@ $apps = @(
     # Various desktop tooling
     @{name = "SumatraPDF.SumatraPDF" },
     @{name = "TheDocumentFoundation.LibreOffice" },
-    @{name = "TimKosse.FileZilla.Client" },
-    @{name = "VSCodium.VSCodium" },
     @{name = "7zip.7zip" },
     @{name = "Joplin.Joplin" },
-    @{name = "AltDrag.AltDrag" },
 
-    # Dev tools
-    @{name = "OpenJS.NodeJS" },
+    # Dev related tooling
+    @{name = "TimKosse.FileZilla.Client" },
+    @{name = "dbeaver.dbeaver" },
+    @{name = "VSCodium.VSCodium" },
+    @{name = "Insomnia.Insomnia"},
+    @{name = "Stoplight.Studio"},
+    @{name = "KaiKramer.KeyStoreExplorer"},
 
     # Communication
     @{name = "Discord.Discord" },
@@ -31,10 +33,9 @@ $apps = @(
     @{name = "HandBrake.HandBrake" },
     @{name = "Toinane.Colorpicker" },
     @{name = "OBSProject.OBSStudio" },
-
-    # System utilities
-    @{name = "Piriform.CCleaner" },
-
+    @{name = "NickeManarin.ScreenToGif" },
+    @{name = "FreeCAD.FreeCAD" },
+    
     # Gaming
     @{name = "Valve.Steam" },
     @{name = "EpicGames.EpicGamesLauncher" },
