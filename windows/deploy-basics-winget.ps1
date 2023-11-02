@@ -17,6 +17,7 @@ $apps = @(
     @{name = "Insomnia.Insomnia"},
     @{name = "Stoplight.Studio"},
     @{name = "KaiKramer.KeyStoreExplorer"},
+    @{name = "Microsoft.Sysinternals.RDCMan"},
 
     # Communication
     @{name = "Discord.Discord" },
