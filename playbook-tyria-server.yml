@@ -11,20 +11,20 @@
     - role: server-traefik
       tags: [traefik]
     - role: service-gitea
-      tags: [gitea]
+      tags: [gitea, docker-service]
     - role: service-concourse
-      tags: [concourse]
+      tags: [concourse, docker-service]
     - role: service-nexus
-      tags: [nexus]
+      tags: [nexus, docker-service]
     - role: service-nextcloud
-      tags: [nextcloud]
+      tags: [nextcloud, docker-service]
     - role: service-trilium
-      tags: [trilium]
+      tags: [trilium, docker-service]
     - role: service-bitwardenrs
-      tags: [bitwardenrs]
+      tags: [bitwardenrs, docker-service]
     - role: service-freshrss
-      tags: [freshrss]
+      tags: [freshrss, docker-service]
     - role: service-kanboard
-      tags: [kanboard]
+      tags: [kanboard, docker-service]
     - role: service-uptimekuma
-      tags: [uptimekuma]
+      tags: [uptimekuma, docker-service]

@@ -6,7 +6,7 @@
       version: "3"
       services:
         kanboard:
-          image: kanboard/kanboard:v1.2.20
+          image: kanboard/kanboard:v1.2.35
           restart: unless-stopped
           volumes:
             - data:/var/www/app/data

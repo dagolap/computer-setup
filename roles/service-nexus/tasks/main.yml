@@ -6,7 +6,7 @@
       version: "2"
       services:
         nexus:
-          image: sonatype/nexus3:3.37.0
+          image: sonatype/nexus3:3.66.0
           restart: always
           volumes:
             - nexus-data:/nexus-data

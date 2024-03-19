@@ -6,7 +6,7 @@
       version: '3'
       services:
         freshrss:
-          image: freshrss/freshrss:1.18.1
+          image: freshrss/freshrss:1.23.1
           restart: unless-stopped
           depends_on:
             - db
